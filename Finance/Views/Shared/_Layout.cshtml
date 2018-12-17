@@ -1,4 +1,4 @@
-﻿@*@{if (Session["Pass"] == null)
+﻿@{if (Session["Pass"] == null)
     {
         <script>
 
@@ -12,7 +12,7 @@
         </script>
     }
 
-}*@
+}
 
 
 <!DOCTYPE html>
@@ -58,6 +58,7 @@
                             <li><a href='@Url.Action("Index", "GuaranteeCustomers")'>บุคคลค้ำประกัน</a></li>
                             <li><a href='@Url.Action("Index", "Licenses")'>ทะเบียน</a></li>
                             <li><a href='@Url.Action("Index", "Contracts")'>สัญญา</a></li>
+                            <li><a href='@Url.Action("Index", "Payments")'>การชำระเงิน</a></li>
                         </ul>
                     </li>
                     <li>@Html.ActionLink("ออกจากระบบ", "Logout", "Login")</li>

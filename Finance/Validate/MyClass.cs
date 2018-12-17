@@ -8,6 +8,10 @@ namespace Finance.Models
 {
     public class MyClass
     {
+        [Required(ErrorMessage = "กรูณากรอกวันที่")]
+        public DateTime Mydate1 { get; set; }
+        [Display(Name = "จำนวนเดือน")]
+        public int Addmonth { get; set; }
         public HttpPostedFileBase Mypic1 { get; set; }
         public HttpPostedFileBase Mypic2 { get; set; }
         [Display(Name = "รหัสบัตรประชาชน")]
@@ -38,7 +42,7 @@ namespace Finance.Models
         public string bala { get; set; }
         [Display(Name = "ยอดจ่ายต่อเดือน")]
         public string outbala { get; set; }
-        [Display(Name = "เงินทอน")]
+        [Display(Name = "ยอดเงินที่รับ")]
         public string chabala { get; set; }
         [Display(Name = "กรอกเลขสัญญา")]
         public string searchcus { get; set; }

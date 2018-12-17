@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using Finance.Models;
 
 namespace Finance.Controllers
@@ -56,11 +57,12 @@ namespace Finance.Controllers
                 data.chabala = m.Per_Month_Amount.ToString();
                 if (m.Date_Last != null)
                 {
-                    decimal permonth = GetMonthDifference(m.Date_Start.Value, DateTime.UtcNow);
-                    data.bdate = permonth.ToString();
+                    decimal permonth = GetMonthDifference(m.Date_Last.Value, DateTime.Now);
+                    data.bdate = (permonth * m.Per_Month_Amount).ToString();
                 }
                 else data.bdate = "0";
             }
+            else return RedirectToAction("Index", "Searching");
             ViewBag.Status_m = new SelectList(db.StatusCustomer, "StatusID", "StatusType");
             ViewBag.ContractID = new SelectList(db.Contracts, "ContractID", "ContractID");
             ViewBag.ID_Card_m = new SelectList(db.Customers, "ID_Card_m", "ID_Card_m");
@@ -80,30 +82,31 @@ namespace Finance.Controllers
             string dateString = DateTime.Now.ToString("MM/dd/yyyy");
             var count = db.Payments.Include(p => p.Contracts).Include(p => p.Customers);
             int no = count.Count() + 1000;
-            var b = db.Contracts.Find(payments.ContractID);
-            //decimal money = Convert.ToDecimal(b.Per_Month_Amount);
-            //if (money >= b.Per_Month_Amount)
-            //{
-            //    data.chabala = (payments.Payment_Money - b.Per_Month_Amount).ToString();
-            //    return View(data);
-            //}
-            //else
-            //{
-            //    ModelState.AddModelError("Payment_Money", "ยอดเงินไม่ถูกต้อง");
-            //}
-            if (ModelState.IsValid)
+            var b = db.Contracts.Find(payments.tempid);
+            decimal c;
+            decimal d;
+            decimal.TryParse(payments.bdate, out c);
+            decimal.TryParse(payments.tempshow, out d);
+            if (payments.Payment_Money <= c)
             {
-                b.Out_Balance -= payments.Payment_Money;
-                payments.PaymentID = dateString.Replace("/", "") + no.ToString();
-                payments.NameUser = Session["User"].ToString();
-                payments.PaymentDate = DateTime.UtcNow;
-                payments.NameUser = Session["User"].ToString();
-                db.Payments.Add(payments);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                ModelState.AddModelError("Payment_Money", "ยอดเงินไม่ถูกต้อง");
+                return View(payments);
             }
-            else return View(payments);
-
+            if (payments.Payment_Money >= d)
+            {
+                ModelState.AddModelError("tempshow", "ยอดเงินไม่ถูกต้อง");
+                return View(payments);
+            }
+            payments.PaymentID = dateString.Replace("/", "") + no.ToString();
+            payments.ID_Card_m = payments.tempname;
+            payments.ContractID = payments.tempid;
+            payments.NameUser = Session["User"].ToString();
+            payments.PaymentDate = DateTime.Now;
+            b.Out_Balance -= payments.Payment_Money;
+            b.Date_Last = DateTime.Now;
+            db.Payments.Add(payments);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: Payments/Edit/5

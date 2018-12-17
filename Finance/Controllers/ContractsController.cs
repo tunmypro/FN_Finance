@@ -13,6 +13,7 @@ namespace Finance.Controllers
     public class ContractsController : Controller
     {
         private Finance5917Entities1 db = new Finance5917Entities1();
+        readonly ConvertDate td = new ConvertDate();
 
         public ActionResult Index()
         {
@@ -61,17 +62,20 @@ namespace Finance.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Contracts contracts)
         {
+            contracts.Date_Start = DateTime.Now;
+            contracts.Date_End = td.ThaiDate(contracts.Mydate1).AddMonths(contracts.Addmonth);
             ViewBag.ID_Card_m = new SelectList(db.Customers, "ID_Card_m", "ID_Card_m", contracts.ID_Card_m);
             ViewBag.ID_Card_g = new SelectList(db.GuaranteeCustomers, "ID_Card_g", "ID_Card_g", contracts.ID_Card_g);
             ViewBag.LicenseID = new SelectList(db.License, "LicenseID", "LicensePlate", contracts.LicenseID);
             var interest = db.License.Find(contracts.LicenseID);
             contracts.ContractID = contracts.ID_Card_m.Substring(8, 5) + contracts.ID_Card_g.Substring(8, 5);
             var c = db.Contracts.Find(contracts.ContractID);
-            if (c == null)
+            if (c == null && contracts.Addmonth != 0)
             {
                 decimal permonth = GetMonthDifference(contracts.Date_Start.Value, contracts.Date_End.Value);
                 contracts.Per_Month_Amount = (interest.LicenseTypes.InterestRate * contracts.Balance + contracts.Balance) / permonth;
-                contracts.Out_Balance = contracts.Balance;
+                contracts.Out_Balance = contracts.Per_Month_Amount*permonth;
+                contracts.Date_Last = contracts.Date_Start;
                 db.Contracts.Add(contracts);
                 db.SaveChanges();
                 return RedirectToAction("Index");
