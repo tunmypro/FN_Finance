@@ -1,0 +1,32 @@
+﻿<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="~/jquery.Thailand.js/dependencies/JQL.min.js"></script>
+<script type="text/javascript" src="~/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+
+<link rel="stylesheet" href="~/jquery.Thailand.js/dist/jquery.Thailand.min.css">
+<script type="text/javascript" src="~/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+
+<h2>ค้นหา</h2>
+<input type="text" id="search">
+
+<input type="text" id="district_code">
+<input type="text" id="amphoe_code">
+<input type="text" id="province_code">
+
+
+<script>
+    $.Thailand({
+        database: '~/jquery.Thailand.js/database/geodb.json',
+
+        $search: $('#search'),
+
+        $district_code: $('#district_code'),
+        $amphoe_code: $('#amphoe_code'),
+        $province_code: $('#province_code'),
+
+        onDataFill: function (data) {
+            console.log(data);
+        }
+    });
+</script>

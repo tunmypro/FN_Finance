@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Finance.Models.Contracts>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>ค้นหา</h2>
+
+<table class="table table-striped table-bordered" id="example" style="width: 100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.ID_Card_m)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.Name_m)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.Lname_m)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_Start)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_End)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Out_Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.License.LicensePlate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.getdata)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContractID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customers.ID_Card_m)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customers.Name_m)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customers.Lname_m)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_Start)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_End)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Out_Balance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.License.LicensePlate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.getdata)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+
+
+@section scripts{
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var table = $('#example').DataTable(
+                {
+                    "columnDefs": [{
+                        "targets": -1,
+                        "data": null,
+                        "defaultContent": "<button>จ่ายเงิน</button>"
+                    }]
+                });
+
+            $('#example tbody').on('click', 'button', function () {
+                var data = table.row($(this).parents('tr')).data();
+                window.location.href = "@Url.Action("Create","Payments")?ID=" + data[0];
+                alert("รหัสสัญญา -> " + data[0] + "  ชื่อ -> " + data[2] + data[3]);
+            });
+
+        });
+    </script>
+
+
+}

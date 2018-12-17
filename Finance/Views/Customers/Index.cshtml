@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Finance.Models.Customers>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Card_m)
+        </th>
+        <th>
+            ชื่อ-นามสกุล
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Career_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_img_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusCustomer.StatusType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Card_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title.titlename) @Html.DisplayFor(modelItem => item.Name_m) @Html.DisplayFor(modelItem => item.Lname_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Career_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary_m)
+        </td>
+        <td>
+            @if (item.Image_m != null)
+            {
+                <img src="data:image/png;base64,@Convert.ToBase64String(item.Image_m)" width="100">
+            }
+        </td>
+        <td>
+            @if (item.ID_img_m != null)
+            {
+                <img src="data:image/png;base64,@Convert.ToBase64String(item.ID_img_m)" width="100">
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusCustomer.StatusType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID_Card_m }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID_Card_m }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_Card_m }
+           , new { onclick = "return confirm('คุณแน่ใจว่าจะลบ ?')" })
+        </td>
+    </tr>
+}
+
+</table>

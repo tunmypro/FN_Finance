@@ -1,0 +1,139 @@
+﻿@model Finance.Models.User_Finance
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout - home.cshtml";
+}
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+
+        body {
+            background: url(http://habrastorage.org/files/c9c/191/f22/c9c191f226c643eabcce6debfe76049d.jpg);
+        }
+
+        .jumbotron {
+            text-align: center;
+            width: 30rem;
+            border-radius: 0.5rem;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            margin: 17rem auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 1.4rem;
+            padding: 1rem;
+            background-color: #ecf2f4;
+            border-radius: 0.2rem;
+            border: none;
+        }
+
+        h2 {
+            margin-bottom: 3rem;
+            font-weight: bold;
+            color: #ababab;
+        }
+
+        .btn {
+            border-radius: 0.2rem;
+        }
+
+            .btn .glyphicon {
+                font-size: 3rem;
+                color: #fff;
+            }
+
+        .full-width {
+            background-color: #8eb5e2;
+            width: 100%;
+            -webkit-border-top-right-radius: 0;
+            -webkit-border-bottom-right-radius: 0;
+            -moz-border-radius-topright: 0;
+            -moz-border-radius-bottomright: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin-bottom: auto;
+            margin-left: 5rem;
+            margin-right: 5rem;
+        }
+    </style>
+</head>
+
+
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <div class="jumbotron">
+            <div class="container">
+                <h2>
+                    <div id="time"></div>
+                </h2>
+                <div class="box">
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="เข้าสู่ระบบ" onclick="myFunction()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        (function () {
+            function checkTime(i) {
+                return (i < 10) ? "0" + i : i;
+            }
+
+            function startTime() {
+                var today = new Date(),
+                    h = checkTime(today.getHours()),
+                    m = checkTime(today.getMinutes()),
+                    s = checkTime(today.getSeconds());
+                document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+                t = setTimeout(function () {
+                    startTime()
+                }, 500);
+            }
+            startTime();
+        })();
+
+    </script>
+
+
+}

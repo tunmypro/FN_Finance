@@ -1,0 +1,131 @@
+﻿@model Finance.Models.GuaranteeCustomers
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GuaranteeCustomers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lname_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lname_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.District_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amphur_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amphur_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zipcode_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zipcode_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Career_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Career_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_img_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_img_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusCustomer.StatusType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusCustomer.StatusType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title.titlename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title.titlename)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Card_g }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

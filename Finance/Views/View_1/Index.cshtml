@@ -1,0 +1,166 @@
+﻿@model IEnumerable<Finance.Models.View_1>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LicensePlate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LicenseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KeepAddressID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LicenseType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_g)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lname_g)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address_g)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Career_g)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary_g)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status_g)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lname_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Career_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expr1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expr2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_End)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Out_Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Month_Amount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicensePlate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicenseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KeepAddressID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicenseType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_g)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lname_g)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address_g)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Career_g)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary_g)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status_g)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lname_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Career_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Expr1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Expr2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Start)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_End)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Out_Balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month_Amount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

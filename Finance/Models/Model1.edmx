@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Finance5917Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Contracts">
+          <Key>
+            <PropertyRef Name="ContractID" />
+          </Key>
+          <Property Name="ContractID" Type="nchar" MaxLength="22" Nullable="false" />
+          <Property Name="LicenseID" Type="int" />
+          <Property Name="ID_Card_m" Type="char" MaxLength="13" />
+          <Property Name="ID_Card_g" Type="char" MaxLength="13" />
+          <Property Name="Date_Start" Type="date" />
+          <Property Name="Date_End" Type="date" />
+          <Property Name="Date_Last" Type="date" />
+          <Property Name="Balance" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Out_Balance" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Per_Month_Amount" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="ID_Card_m" />
+          </Key>
+          <Property Name="ID_Card_m" Type="char" MaxLength="13" Nullable="false" />
+          <Property Name="titleid" Type="int" />
+          <Property Name="Name_m" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lname_m" Type="nvarchar" MaxLength="50" />
+          <Property Name="tel" Type="nchar" MaxLength="10" />
+          <Property Name="Address_m" Type="varchar" MaxLength="30" />
+          <Property Name="District_m" Type="varchar" MaxLength="30" />
+          <Property Name="Amphur_m" Type="varchar" MaxLength="30" />
+          <Property Name="Province_m" Type="varchar" MaxLength="30" />
+          <Property Name="Zipcode_m" Type="char" MaxLength="5" />
+          <Property Name="Career_m" Type="nchar" MaxLength="30" />
+          <Property Name="Salary_m" Type="money" />
+          <Property Name="Status_m" Type="int" />
+          <Property Name="Image_m" Type="image" />
+          <Property Name="ID_img_m" Type="image" />
+        </EntityType>
+        <EntityType Name="GuaranteeCustomers">
+          <Key>
+            <PropertyRef Name="ID_Card_g" />
+          </Key>
+          <Property Name="ID_Card_g" Type="char" MaxLength="13" Nullable="false" />
+          <Property Name="titleid" Type="int" />
+          <Property Name="Name_g" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lname_g" Type="nvarchar" MaxLength="50" />
+          <Property Name="tel" Type="nchar" MaxLength="10" />
+          <Property Name="Address_g" Type="varchar" MaxLength="30" />
+          <Property Name="District_g" Type="varchar" MaxLength="30" />
+          <Property Name="Amphur_g" Type="varchar" MaxLength="30" />
+          <Property Name="Province_g" Type="varchar" MaxLength="30" />
+          <Property Name="Zipcode_g" Type="char" MaxLength="5" />
+          <Property Name="Career_g" Type="nchar" MaxLength="30" />
+          <Property Name="Salary_g" Type="money" />
+          <Property Name="Status_g" Type="int" />
+          <Property Name="Image_g" Type="image" />
+          <Property Name="ID_img_g" Type="image" />
+        </EntityType>
+        <EntityType Name="License">
+          <Key>
+            <PropertyRef Name="LicenseID" />
+          </Key>
+          <Property Name="LicenseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicensePlate" Type="nchar" MaxLength="10" />
+          <Property Name="LicenseName" Type="nvarchar" MaxLength="20" />
+          <Property Name="KeepAddressID" Type="varchar" MaxLength="30" />
+          <Property Name="District_l" Type="varchar" MaxLength="30" />
+          <Property Name="Amphur_l" Type="varchar" MaxLength="30" />
+          <Property Name="Province_l" Type="varchar" MaxLength="30" />
+          <Property Name="Zipcode_l" Type="char" MaxLength="5" />
+          <Property Name="LicenseType" Type="int" />
+          <Property Name="LicenseStatusID" Type="int" />
+          <Property Name="Licen_img" Type="image" />
+        </EntityType>
+        <EntityType Name="LicenseStatusDisplay">
+          <Key>
+            <PropertyRef Name="LicenseStatusID" />
+          </Key>
+          <Property Name="LicenseStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicenseStatusName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="LicenseTypes">
+          <Key>
+            <PropertyRef Name="LicenseType" />
+          </Key>
+          <Property Name="LicenseType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InterestName" Type="varchar" MaxLength="30" />
+          <Property Name="InterestRate" Type="decimal" Precision="3" Scale="2" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="ID_Card_m" Type="char" MaxLength="13" />
+          <Property Name="NameUser" Type="varchar" MaxLength="50" />
+          <Property Name="ContractID" Type="nchar" MaxLength="22" Nullable="false" />
+          <Property Name="PaymentDate" Type="date" />
+          <Property Name="Payment Money" Type="decimal" Precision="9" Scale="2" />
+        </EntityType>
+        <EntityType Name="StatusCustomer">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusType" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="StatusUser">
+          <Key>
+            <PropertyRef Name="StatusUser" />
+          </Key>
+          <Property Name="StatusUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="title">
+          <Key>
+            <PropertyRef Name="titleid" />
+          </Key>
+          <Property Name="titleid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="titlename" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="User_Finance">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Lname" Type="varchar" MaxLength="50" />
+          <Property Name="StatusUser" Type="int" />
+        </EntityType>
+        <Association Name="FK_Contracts_Customers">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="ID_Card_m" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="ID_Card_m" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contracts_GuaranteeCustomers">
+          <End Role="GuaranteeCustomers" Type="Self.GuaranteeCustomers" Multiplicity="0..1" />
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GuaranteeCustomers">
+              <PropertyRef Name="ID_Card_g" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="ID_Card_g" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contracts_License">
+          <End Role="License" Type="Self.License" Multiplicity="0..1" />
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="License">
+              <PropertyRef Name="LicenseID" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="LicenseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_StatusType">
+          <End Role="StatusCustomer" Type="Self.StatusCustomer" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusCustomer">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="Status_m" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_title">
+          <End Role="title" Type="Self.title" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="title">
+              <PropertyRef Name="titleid" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="titleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuaranteeCustomers_StatusType">
+          <End Role="StatusCustomer" Type="Self.StatusCustomer" Multiplicity="0..1" />
+          <End Role="GuaranteeCustomers" Type="Self.GuaranteeCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusCustomer">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="GuaranteeCustomers">
+              <PropertyRef Name="Status_g" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuaranteeCustomers_title">
+          <End Role="title" Type="Self.title" Multiplicity="0..1" />
+          <End Role="GuaranteeCustomers" Type="Self.GuaranteeCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="title">
+              <PropertyRef Name="titleid" />
+            </Principal>
+            <Dependent Role="GuaranteeCustomers">
+              <PropertyRef Name="titleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_License_LicenseStatus">
+          <End Role="LicenseStatusDisplay" Type="Self.LicenseStatusDisplay" Multiplicity="0..1" />
+          <End Role="License" Type="Self.License" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LicenseStatusDisplay">
+              <PropertyRef Name="LicenseStatusID" />
+            </Principal>
+            <Dependent Role="License">
+              <PropertyRef Name="LicenseStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_License_LicenseType">
+          <End Role="LicenseTypes" Type="Self.LicenseTypes" Multiplicity="0..1" />
+          <End Role="License" Type="Self.License" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LicenseTypes">
+              <PropertyRef Name="LicenseType" />
+            </Principal>
+            <Dependent Role="License">
+              <PropertyRef Name="LicenseType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Contracts">
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contracts">
+              <PropertyRef Name="ContractID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="ContractID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Customers">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="ID_Card_m" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="ID_Card_m" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Finance_StatusUser">
+          <End Role="StatusUser" Type="Self.StatusUser" Multiplicity="0..1" />
+          <End Role="User_Finance" Type="Self.User_Finance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusUser">
+              <PropertyRef Name="StatusUser" />
+            </Principal>
+            <Dependent Role="User_Finance">
+              <PropertyRef Name="StatusUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Finance5917ModelStoreContainer">
+          <EntitySet Name="Contracts" EntityType="Self.Contracts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GuaranteeCustomers" EntityType="Self.GuaranteeCustomers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="License" EntityType="Self.License" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LicenseStatusDisplay" EntityType="Self.LicenseStatusDisplay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LicenseTypes" EntityType="Self.LicenseTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusCustomer" EntityType="Self.StatusCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusUser" EntityType="Self.StatusUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="title" EntityType="Self.title" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Finance" EntityType="Self.User_Finance" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Contracts_Customers" Association="Self.FK_Contracts_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contracts_GuaranteeCustomers" Association="Self.FK_Contracts_GuaranteeCustomers">
+            <End Role="GuaranteeCustomers" EntitySet="GuaranteeCustomers" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contracts_License" Association="Self.FK_Contracts_License">
+            <End Role="License" EntitySet="License" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_StatusType" Association="Self.FK_Customers_StatusType">
+            <End Role="StatusCustomer" EntitySet="StatusCustomer" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_title" Association="Self.FK_Customers_title">
+            <End Role="title" EntitySet="title" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuaranteeCustomers_StatusType" Association="Self.FK_GuaranteeCustomers_StatusType">
+            <End Role="StatusCustomer" EntitySet="StatusCustomer" />
+            <End Role="GuaranteeCustomers" EntitySet="GuaranteeCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuaranteeCustomers_title" Association="Self.FK_GuaranteeCustomers_title">
+            <End Role="title" EntitySet="title" />
+            <End Role="GuaranteeCustomers" EntitySet="GuaranteeCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_License_LicenseStatus" Association="Self.FK_License_LicenseStatus">
+            <End Role="LicenseStatusDisplay" EntitySet="LicenseStatusDisplay" />
+            <End Role="License" EntitySet="License" />
+          </AssociationSet>
+          <AssociationSet Name="FK_License_LicenseType" Association="Self.FK_License_LicenseType">
+            <End Role="LicenseTypes" EntitySet="LicenseTypes" />
+            <End Role="License" EntitySet="License" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Contracts" Association="Self.FK_Payments_Contracts">
+            <End Role="Contracts" EntitySet="Contracts" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Customers" Association="Self.FK_Payments_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Finance_StatusUser" Association="Self.FK_User_Finance_StatusUser">
+            <End Role="StatusUser" EntitySet="StatusUser" />
+            <End Role="User_Finance" EntitySet="User_Finance" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Finance5917Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Finance5917Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Contracts" EntityType="Finance5917Model.Contracts" />
+          <EntitySet Name="Customers" EntityType="Finance5917Model.Customers" />
+          <EntitySet Name="GuaranteeCustomers" EntityType="Finance5917Model.GuaranteeCustomers" />
+          <EntitySet Name="License" EntityType="Finance5917Model.License" />
+          <EntitySet Name="LicenseStatusDisplay" EntityType="Finance5917Model.LicenseStatusDisplay" />
+          <EntitySet Name="LicenseTypes" EntityType="Finance5917Model.LicenseTypes" />
+          <EntitySet Name="Payments" EntityType="Finance5917Model.Payments" />
+          <EntitySet Name="StatusCustomer" EntityType="Finance5917Model.StatusCustomer" />
+          <EntitySet Name="StatusUser" EntityType="Finance5917Model.StatusUser" />
+          <EntitySet Name="title" EntityType="Finance5917Model.title" />
+          <EntitySet Name="User_Finance" EntityType="Finance5917Model.User_Finance" />
+          <AssociationSet Name="FK_Contracts_Customers" Association="Finance5917Model.FK_Contracts_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contracts_GuaranteeCustomers" Association="Finance5917Model.FK_Contracts_GuaranteeCustomers">
+            <End Role="GuaranteeCustomers" EntitySet="GuaranteeCustomers" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contracts_License" Association="Finance5917Model.FK_Contracts_License">
+            <End Role="License" EntitySet="License" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Contracts" Association="Finance5917Model.FK_Payments_Contracts">
+            <End Role="Contracts" EntitySet="Contracts" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_StatusType" Association="Finance5917Model.FK_Customers_StatusType">
+            <End Role="StatusCustomer" EntitySet="StatusCustomer" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_title" Association="Finance5917Model.FK_Customers_title">
+            <End Role="title" EntitySet="title" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Customers" Association="Finance5917Model.FK_Payments_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuaranteeCustomers_StatusType" Association="Finance5917Model.FK_GuaranteeCustomers_StatusType">
+            <End Role="StatusCustomer" EntitySet="StatusCustomer" />
+            <End Role="GuaranteeCustomers" EntitySet="GuaranteeCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuaranteeCustomers_title" Association="Finance5917Model.FK_GuaranteeCustomers_title">
+            <End Role="title" EntitySet="title" />
+            <End Role="GuaranteeCustomers" EntitySet="GuaranteeCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_License_LicenseStatus" Association="Finance5917Model.FK_License_LicenseStatus">
+            <End Role="LicenseStatusDisplay" EntitySet="LicenseStatusDisplay" />
+            <End Role="License" EntitySet="License" />
+          </AssociationSet>
+          <AssociationSet Name="FK_License_LicenseType" Association="Finance5917Model.FK_License_LicenseType">
+            <End Role="LicenseTypes" EntitySet="LicenseTypes" />
+            <End Role="License" EntitySet="License" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Finance_StatusUser" Association="Finance5917Model.FK_User_Finance_StatusUser">
+            <End Role="StatusUser" EntitySet="StatusUser" />
+            <End Role="User_Finance" EntitySet="User_Finance" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Contracts">
+          <Key>
+            <PropertyRef Name="ContractID" />
+          </Key>
+          <Property Name="ContractID" Type="String" Nullable="false" MaxLength="22" FixedLength="true" Unicode="true" />
+          <Property Name="LicenseID" Type="Int32" />
+          <Property Name="ID_Card_m" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="ID_Card_g" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="Date_Start" Type="DateTime" Precision="0" />
+          <Property Name="Date_End" Type="DateTime" Precision="0" />
+          <Property Name="Date_Last" Type="DateTime" Precision="0" />
+          <Property Name="Balance" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Out_Balance" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Per_Month_Amount" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Customers" Relationship="Finance5917Model.FK_Contracts_Customers" FromRole="Contracts" ToRole="Customers" />
+          <NavigationProperty Name="GuaranteeCustomers" Relationship="Finance5917Model.FK_Contracts_GuaranteeCustomers" FromRole="Contracts" ToRole="GuaranteeCustomers" />
+          <NavigationProperty Name="License" Relationship="Finance5917Model.FK_Contracts_License" FromRole="Contracts" ToRole="License" />
+          <NavigationProperty Name="Payments" Relationship="Finance5917Model.FK_Payments_Contracts" FromRole="Contracts" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="ID_Card_m" />
+          </Key>
+          <Property Name="ID_Card_m" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="titleid" Type="Int32" />
+          <Property Name="Name_m" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lname_m" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Address_m" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="District_m" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Amphur_m" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Province_m" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zipcode_m" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Career_m" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Salary_m" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Status_m" Type="Int32" />
+          <Property Name="Image_m" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ID_img_m" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Contracts" Relationship="Finance5917Model.FK_Contracts_Customers" FromRole="Customers" ToRole="Contracts" />
+          <NavigationProperty Name="StatusCustomer" Relationship="Finance5917Model.FK_Customers_StatusType" FromRole="Customers" ToRole="StatusCustomer" />
+          <NavigationProperty Name="title" Relationship="Finance5917Model.FK_Customers_title" FromRole="Customers" ToRole="title" />
+          <NavigationProperty Name="Payments" Relationship="Finance5917Model.FK_Payments_Customers" FromRole="Customers" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="GuaranteeCustomers">
+          <Key>
+            <PropertyRef Name="ID_Card_g" />
+          </Key>
+          <Property Name="ID_Card_g" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="titleid" Type="Int32" />
+          <Property Name="Name_g" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lname_g" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Address_g" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="District_g" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Amphur_g" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Province_g" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zipcode_g" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Career_g" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Salary_g" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Status_g" Type="Int32" />
+          <Property Name="Image_g" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ID_img_g" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Contracts" Relationship="Finance5917Model.FK_Contracts_GuaranteeCustomers" FromRole="GuaranteeCustomers" ToRole="Contracts" />
+          <NavigationProperty Name="StatusCustomer" Relationship="Finance5917Model.FK_GuaranteeCustomers_StatusType" FromRole="GuaranteeCustomers" ToRole="StatusCustomer" />
+          <NavigationProperty Name="title" Relationship="Finance5917Model.FK_GuaranteeCustomers_title" FromRole="GuaranteeCustomers" ToRole="title" />
+        </EntityType>
+        <EntityType Name="License">
+          <Key>
+            <PropertyRef Name="LicenseID" />
+          </Key>
+          <Property Name="LicenseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicensePlate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="LicenseName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="KeepAddressID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="District_l" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Amphur_l" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Province_l" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zipcode_l" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="LicenseType" Type="Int32" />
+          <Property Name="LicenseStatusID" Type="Int32" />
+          <Property Name="Licen_img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Contracts" Relationship="Finance5917Model.FK_Contracts_License" FromRole="License" ToRole="Contracts" />
+          <NavigationProperty Name="LicenseStatusDisplay" Relationship="Finance5917Model.FK_License_LicenseStatus" FromRole="License" ToRole="LicenseStatusDisplay" />
+          <NavigationProperty Name="LicenseTypes" Relationship="Finance5917Model.FK_License_LicenseType" FromRole="License" ToRole="LicenseTypes" />
+        </EntityType>
+        <EntityType Name="LicenseStatusDisplay">
+          <Key>
+            <PropertyRef Name="LicenseStatusID" />
+          </Key>
+          <Property Name="LicenseStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicenseStatusName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="License" Relationship="Finance5917Model.FK_License_LicenseStatus" FromRole="LicenseStatusDisplay" ToRole="License" />
+        </EntityType>
+        <EntityType Name="LicenseTypes">
+          <Key>
+            <PropertyRef Name="LicenseType" />
+          </Key>
+          <Property Name="LicenseType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InterestName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="InterestRate" Type="Decimal" Precision="3" Scale="2" />
+          <NavigationProperty Name="License" Relationship="Finance5917Model.FK_License_LicenseType" FromRole="LicenseTypes" ToRole="License" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="ID_Card_m" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="NameUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContractID" Type="String" Nullable="false" MaxLength="22" FixedLength="true" Unicode="true" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="0" />
+          <Property Name="Payment_Money" Type="Decimal" Precision="9" Scale="2" />
+          <NavigationProperty Name="Contracts" Relationship="Finance5917Model.FK_Payments_Contracts" FromRole="Payments" ToRole="Contracts" />
+          <NavigationProperty Name="Customers" Relationship="Finance5917Model.FK_Payments_Customers" FromRole="Payments" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="StatusCustomer">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customers" Relationship="Finance5917Model.FK_Customers_StatusType" FromRole="StatusCustomer" ToRole="Customers" />
+          <NavigationProperty Name="GuaranteeCustomers" Relationship="Finance5917Model.FK_GuaranteeCustomers_StatusType" FromRole="StatusCustomer" ToRole="GuaranteeCustomers" />
+        </EntityType>
+        <EntityType Name="StatusUser">
+          <Key>
+            <PropertyRef Name="StatusUser1" />
+          </Key>
+          <Property Name="StatusUser1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User_Finance" Relationship="Finance5917Model.FK_User_Finance_StatusUser" FromRole="StatusUser" ToRole="User_Finance" />
+        </EntityType>
+        <EntityType Name="title">
+          <Key>
+            <PropertyRef Name="titleid" />
+          </Key>
+          <Property Name="titleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="titlename" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="Finance5917Model.FK_Customers_title" FromRole="title" ToRole="Customers" />
+          <NavigationProperty Name="GuaranteeCustomers" Relationship="Finance5917Model.FK_GuaranteeCustomers_title" FromRole="title" ToRole="GuaranteeCustomers" />
+        </EntityType>
+        <EntityType Name="User_Finance">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StatusUser" Type="Int32" />
+          <NavigationProperty Name="StatusUser1" Relationship="Finance5917Model.FK_User_Finance_StatusUser" FromRole="User_Finance" ToRole="StatusUser" />
+        </EntityType>
+        <Association Name="FK_Contracts_Customers">
+          <End Type="Finance5917Model.Customers" Role="Customers" Multiplicity="0..1" />
+          <End Type="Finance5917Model.Contracts" Role="Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="ID_Card_m" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="ID_Card_m" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contracts_GuaranteeCustomers">
+          <End Type="Finance5917Model.GuaranteeCustomers" Role="GuaranteeCustomers" Multiplicity="0..1" />
+          <End Type="Finance5917Model.Contracts" Role="Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GuaranteeCustomers">
+              <PropertyRef Name="ID_Card_g" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="ID_Card_g" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contracts_License">
+          <End Type="Finance5917Model.License" Role="License" Multiplicity="0..1" />
+          <End Type="Finance5917Model.Contracts" Role="Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="License">
+              <PropertyRef Name="LicenseID" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="LicenseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Contracts">
+          <End Type="Finance5917Model.Contracts" Role="Contracts" Multiplicity="1" />
+          <End Type="Finance5917Model.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contracts">
+              <PropertyRef Name="ContractID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="ContractID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_StatusType">
+          <End Type="Finance5917Model.StatusCustomer" Role="StatusCustomer" Multiplicity="0..1" />
+          <End Type="Finance5917Model.Customers" Role="Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusCustomer">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="Status_m" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_title">
+          <End Type="Finance5917Model.title" Role="title" Multiplicity="0..1" />
+          <End Type="Finance5917Model.Customers" Role="Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="title">
+              <PropertyRef Name="titleid" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="titleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Customers">
+          <End Type="Finance5917Model.Customers" Role="Customers" Multiplicity="0..1" />
+          <End Type="Finance5917Model.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="ID_Card_m" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="ID_Card_m" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuaranteeCustomers_StatusType">
+          <End Type="Finance5917Model.StatusCustomer" Role="StatusCustomer" Multiplicity="0..1" />
+          <End Type="Finance5917Model.GuaranteeCustomers" Role="GuaranteeCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusCustomer">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="GuaranteeCustomers">
+              <PropertyRef Name="Status_g" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuaranteeCustomers_title">
+          <End Type="Finance5917Model.title" Role="title" Multiplicity="0..1" />
+          <End Type="Finance5917Model.GuaranteeCustomers" Role="GuaranteeCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="title">
+              <PropertyRef Name="titleid" />
+            </Principal>
+            <Dependent Role="GuaranteeCustomers">
+              <PropertyRef Name="titleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_License_LicenseStatus">
+          <End Type="Finance5917Model.LicenseStatusDisplay" Role="LicenseStatusDisplay" Multiplicity="0..1" />
+          <End Type="Finance5917Model.License" Role="License" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LicenseStatusDisplay">
+              <PropertyRef Name="LicenseStatusID" />
+            </Principal>
+            <Dependent Role="License">
+              <PropertyRef Name="LicenseStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_License_LicenseType">
+          <End Type="Finance5917Model.LicenseTypes" Role="LicenseTypes" Multiplicity="0..1" />
+          <End Type="Finance5917Model.License" Role="License" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LicenseTypes">
+              <PropertyRef Name="LicenseType" />
+            </Principal>
+            <Dependent Role="License">
+              <PropertyRef Name="LicenseType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Finance_StatusUser">
+          <End Type="Finance5917Model.StatusUser" Role="StatusUser" Multiplicity="0..1" />
+          <End Type="Finance5917Model.User_Finance" Role="User_Finance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusUser">
+              <PropertyRef Name="StatusUser1" />
+            </Principal>
+            <Dependent Role="User_Finance">
+              <PropertyRef Name="StatusUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Finance5917ModelStoreContainer" CdmEntityContainer="Finance5917Entities1">
+          <EntitySetMapping Name="Contracts">
+            <EntityTypeMapping TypeName="Finance5917Model.Contracts">
+              <MappingFragment StoreEntitySet="Contracts">
+                <ScalarProperty Name="Per_Month_Amount" ColumnName="Per_Month_Amount" />
+                <ScalarProperty Name="Out_Balance" ColumnName="Out_Balance" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Date_Last" ColumnName="Date_Last" />
+                <ScalarProperty Name="Date_End" ColumnName="Date_End" />
+                <ScalarProperty Name="Date_Start" ColumnName="Date_Start" />
+                <ScalarProperty Name="ID_Card_g" ColumnName="ID_Card_g" />
+                <ScalarProperty Name="ID_Card_m" ColumnName="ID_Card_m" />
+                <ScalarProperty Name="LicenseID" ColumnName="LicenseID" />
+                <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Finance5917Model.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="ID_img_m" ColumnName="ID_img_m" />
+                <ScalarProperty Name="Image_m" ColumnName="Image_m" />
+                <ScalarProperty Name="Status_m" ColumnName="Status_m" />
+                <ScalarProperty Name="Salary_m" ColumnName="Salary_m" />
+                <ScalarProperty Name="Career_m" ColumnName="Career_m" />
+                <ScalarProperty Name="Zipcode_m" ColumnName="Zipcode_m" />
+                <ScalarProperty Name="Province_m" ColumnName="Province_m" />
+                <ScalarProperty Name="Amphur_m" ColumnName="Amphur_m" />
+                <ScalarProperty Name="District_m" ColumnName="District_m" />
+                <ScalarProperty Name="Address_m" ColumnName="Address_m" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="Lname_m" ColumnName="Lname_m" />
+                <ScalarProperty Name="Name_m" ColumnName="Name_m" />
+                <ScalarProperty Name="titleid" ColumnName="titleid" />
+                <ScalarProperty Name="ID_Card_m" ColumnName="ID_Card_m" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GuaranteeCustomers">
+            <EntityTypeMapping TypeName="Finance5917Model.GuaranteeCustomers">
+              <MappingFragment StoreEntitySet="GuaranteeCustomers">
+                <ScalarProperty Name="ID_img_g" ColumnName="ID_img_g" />
+                <ScalarProperty Name="Image_g" ColumnName="Image_g" />
+                <ScalarProperty Name="Status_g" ColumnName="Status_g" />
+                <ScalarProperty Name="Salary_g" ColumnName="Salary_g" />
+                <ScalarProperty Name="Career_g" ColumnName="Career_g" />
+                <ScalarProperty Name="Zipcode_g" ColumnName="Zipcode_g" />
+                <ScalarProperty Name="Province_g" ColumnName="Province_g" />
+                <ScalarProperty Name="Amphur_g" ColumnName="Amphur_g" />
+                <ScalarProperty Name="District_g" ColumnName="District_g" />
+                <ScalarProperty Name="Address_g" ColumnName="Address_g" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="Lname_g" ColumnName="Lname_g" />
+                <ScalarProperty Name="Name_g" ColumnName="Name_g" />
+                <ScalarProperty Name="titleid" ColumnName="titleid" />
+                <ScalarProperty Name="ID_Card_g" ColumnName="ID_Card_g" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="License">
+            <EntityTypeMapping TypeName="Finance5917Model.License">
+              <MappingFragment StoreEntitySet="License">
+                <ScalarProperty Name="Licen_img" ColumnName="Licen_img" />
+                <ScalarProperty Name="LicenseStatusID" ColumnName="LicenseStatusID" />
+                <ScalarProperty Name="LicenseType" ColumnName="LicenseType" />
+                <ScalarProperty Name="Zipcode_l" ColumnName="Zipcode_l" />
+                <ScalarProperty Name="Province_l" ColumnName="Province_l" />
+                <ScalarProperty Name="Amphur_l" ColumnName="Amphur_l" />
+                <ScalarProperty Name="District_l" ColumnName="District_l" />
+                <ScalarProperty Name="KeepAddressID" ColumnName="KeepAddressID" />
+                <ScalarProperty Name="LicenseName" ColumnName="LicenseName" />
+                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+                <ScalarProperty Name="LicenseID" ColumnName="LicenseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LicenseStatusDisplay">
+            <EntityTypeMapping TypeName="Finance5917Model.LicenseStatusDisplay">
+              <MappingFragment StoreEntitySet="LicenseStatusDisplay">
+                <ScalarProperty Name="LicenseStatusName" ColumnName="LicenseStatusName" />
+                <ScalarProperty Name="LicenseStatusID" ColumnName="LicenseStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LicenseTypes">
+            <EntityTypeMapping TypeName="Finance5917Model.LicenseTypes">
+              <MappingFragment StoreEntitySet="LicenseTypes">
+                <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+                <ScalarProperty Name="InterestName" ColumnName="InterestName" />
+                <ScalarProperty Name="LicenseType" ColumnName="LicenseType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="Finance5917Model.Payments">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="Payment_Money" ColumnName="Payment Money" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+                <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+                <ScalarProperty Name="ID_Card_m" ColumnName="ID_Card_m" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusCustomer">
+            <EntityTypeMapping TypeName="Finance5917Model.StatusCustomer">
+              <MappingFragment StoreEntitySet="StatusCustomer">
+                <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusUser">
+            <EntityTypeMapping TypeName="Finance5917Model.StatusUser">
+              <MappingFragment StoreEntitySet="StatusUser">
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="StatusUser1" ColumnName="StatusUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="title">
+            <EntityTypeMapping TypeName="Finance5917Model.title">
+              <MappingFragment StoreEntitySet="title">
+                <ScalarProperty Name="titlename" ColumnName="titlename" />
+                <ScalarProperty Name="titleid" ColumnName="titleid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Finance">
+            <EntityTypeMapping TypeName="Finance5917Model.User_Finance">
+              <MappingFragment StoreEntitySet="User_Finance">
+                <ScalarProperty Name="StatusUser" ColumnName="StatusUser" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,35 @@
+﻿@model Finance.Models.Tambons
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tambons</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TambonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TambonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amphurs.AmpurName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amphurs.AmpurName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TambonID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

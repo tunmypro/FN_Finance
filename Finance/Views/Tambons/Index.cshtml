@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Finance.Models.Tambons>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TambonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amphurs.AmpurName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TambonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amphurs.AmpurName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TambonID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TambonID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TambonID })
+        </td>
+    </tr>
+}
+
+</table>

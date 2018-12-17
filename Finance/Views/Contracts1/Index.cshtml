@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Finance.Models.Contracts>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_End)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Out_Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Month_Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customers.Name_m)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuaranteeCustomers.Name_g)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.License.LicensePlate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Start)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_End)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Out_Balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month_Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customers.Name_m)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuaranteeCustomers.Name_g)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.License.LicensePlate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ContractID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ContractID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ContractID })
+        </td>
+    </tr>
+}
+
+</table>

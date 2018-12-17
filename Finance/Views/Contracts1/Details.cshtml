@@ -1,0 +1,83 @@
+﻿@model Finance.Models.Contracts
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contracts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Start)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Start)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_End)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_End)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Out_Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Out_Balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Month_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Month_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customers.Name_m)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customers.Name_m)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuaranteeCustomers.Name_g)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuaranteeCustomers.Name_g)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.License.LicensePlate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.License.LicensePlate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ContractID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
