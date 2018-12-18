@@ -18,6 +18,7 @@ namespace Finance.Controllers
         // GET: Payments
         public ActionResult Index()
         {
+            ViewBag.Change = TempData["Change"];
             var payments = db.Payments.Include(p => p.Contracts).Include(p => p.Customers);
             return View(payments.ToList());
         }
@@ -92,7 +93,7 @@ namespace Finance.Controllers
                 ModelState.AddModelError("Payment_Money", "ยอดเงินไม่ถูกต้อง");
                 return View(payments);
             }
-            if (payments.Payment_Money >= d)
+            if (payments.Payment_Money > d)
             {
                 ModelState.AddModelError("tempshow", "ยอดเงินไม่ถูกต้อง");
                 return View(payments);
@@ -106,6 +107,7 @@ namespace Finance.Controllers
             b.Date_Last = DateTime.Now;
             db.Payments.Add(payments);
             db.SaveChanges();
+            TempData["Change"] = (d - payments.Payment_Money).ToString();
             return RedirectToAction("Index");
         }
 

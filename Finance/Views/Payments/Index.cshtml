@@ -46,3 +46,12 @@
 }
 
 </table>
+
+@if(ViewBag.Change != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("เงินทอน = "+"@ViewBag.Change");
+        };
+    </script>
+}
