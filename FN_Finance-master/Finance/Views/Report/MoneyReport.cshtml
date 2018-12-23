@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Finance.Models.MoneyView>
+
+@{
+    ViewBag.Title = "MoneyReport";
+}
+
+<h2>MoneyReport</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_End)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Last)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Out_Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Month_Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment_Money)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Start)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_End)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Last)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Out_Balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Month_Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Payment_Money)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

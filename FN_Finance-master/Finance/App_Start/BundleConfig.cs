@@ -36,11 +36,6 @@ namespace Finance
             bundles.Add(new StyleBundle("~/CSS/thailand").Include(
                 "~/Thailand/jquery.Thailand.min.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
         }
     }
 }

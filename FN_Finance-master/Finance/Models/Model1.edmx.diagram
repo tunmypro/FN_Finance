@@ -28,6 +28,7 @@
         <AssociationConnector Association="Finance5917Model.FK_License_LicenseStatus" />
         <AssociationConnector Association="Finance5917Model.FK_License_LicenseType" />
         <AssociationConnector Association="Finance5917Model.FK_User_Finance_StatusUser" />
+        <EntityTypeShape EntityType="Finance5917Model.MoneyView" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

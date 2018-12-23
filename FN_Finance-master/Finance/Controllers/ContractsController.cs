@@ -73,7 +73,7 @@ namespace Finance.Controllers
             var c = db.Contracts.Find(contracts.ContractID);
             if (c == null && contracts.Addmonth != 0)
             {
-                decimal permonth = GetMonthDifference(contracts.Date_Start.Value, contracts.Date_End.Value);
+                decimal? permonth = GetMonthDifference(contracts.Date_Start.Value, contracts.Date_End.Value);
                 contracts.Per_Month_Amount = (interest.LicenseTypes.InterestRate * contracts.Balance + contracts.Balance) / permonth;
                 contracts.Out_Balance = contracts.Per_Month_Amount*permonth;
                 contracts.Date_Last = contracts.Date_Start;

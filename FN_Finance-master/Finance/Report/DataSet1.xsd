@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Finance5917ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Finance5917ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Finance5917ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MoneyView" msprop:Generator_TableClassName="MoneyViewDataTable" msprop:Generator_TableVarName="tableMoneyView" msprop:Generator_RowChangedName="MoneyViewRowChanged" msprop:Generator_TablePropName="MoneyView" msprop:Generator_RowDeletingName="MoneyViewRowDeleting" msprop:Generator_RowChangingName="MoneyViewRowChanging" msprop:Generator_RowEvHandlerName="MoneyViewRowChangeEventHandler" msprop:Generator_RowDeletedName="MoneyViewRowDeleted" msprop:Generator_RowClassName="MoneyViewRow" msprop:Generator_UserTableName="MoneyView" msprop:Generator_RowEvArgName="MoneyViewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date_Start" msprop:Generator_ColumnVarNameInTable="columnDate_Start" msprop:Generator_ColumnPropNameInRow="Date_Start" msprop:Generator_ColumnPropNameInTable="Date_StartColumn" msprop:Generator_UserColumnName="Date_Start" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Date_End" msprop:Generator_ColumnVarNameInTable="columnDate_End" msprop:Generator_ColumnPropNameInRow="Date_End" msprop:Generator_ColumnPropNameInTable="Date_EndColumn" msprop:Generator_UserColumnName="Date_End" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Date_Last" msprop:Generator_ColumnVarNameInTable="columnDate_Last" msprop:Generator_ColumnPropNameInRow="Date_Last" msprop:Generator_ColumnPropNameInTable="Date_LastColumn" msprop:Generator_UserColumnName="Date_Last" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Balance" msprop:Generator_ColumnVarNameInTable="columnBalance" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_UserColumnName="Balance" type="xs:decimal" />
+              <xs:element name="Out_Balance" msprop:Generator_ColumnVarNameInTable="columnOut_Balance" msprop:Generator_ColumnPropNameInRow="Out_Balance" msprop:Generator_ColumnPropNameInTable="Out_BalanceColumn" msprop:Generator_UserColumnName="Out_Balance" type="xs:decimal" />
+              <xs:element name="Per_Month_Amount" msprop:Generator_ColumnVarNameInTable="columnPer_Month_Amount" msprop:Generator_ColumnPropNameInRow="Per_Month_Amount" msprop:Generator_ColumnPropNameInTable="Per_Month_AmountColumn" msprop:Generator_UserColumnName="Per_Month_Amount" type="xs:decimal" />
+              <xs:element name="Payment_Money" msprop:Generator_ColumnVarNameInTable="columnPayment_Money" msprop:Generator_ColumnPropNameInRow="Payment_Money" msprop:Generator_ColumnPropNameInTable="Payment_MoneyColumn" msprop:Generator_UserColumnName="Payment_Money" type="xs:decimal" />
+              <xs:element name="PaymentDate" msprop:Generator_ColumnVarNameInTable="columnPaymentDate" msprop:Generator_ColumnPropNameInRow="PaymentDate" msprop:Generator_ColumnPropNameInTable="PaymentDateColumn" msprop:Generator_UserColumnName="PaymentDate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

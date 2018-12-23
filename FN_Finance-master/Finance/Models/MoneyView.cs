@@ -12,16 +12,15 @@ namespace Finance.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Payments:MyClass
+    public partial class MoneyView
     {
-        public string PaymentID { get; set; }
-        public string ID_Card_m { get; set; }
-        public string NameUser { get; set; }
-        public string ContractID { get; set; }
-        public System.DateTime PaymentDate { get; set; }
+        public Nullable<System.DateTime> Date_Start { get; set; }
+        public Nullable<System.DateTime> Date_End { get; set; }
+        public Nullable<System.DateTime> Date_Last { get; set; }
+        public decimal Balance { get; set; }
+        public decimal Out_Balance { get; set; }
+        public decimal Per_Month_Amount { get; set; }
         public decimal Payment_Money { get; set; }
-    
-        public virtual Contracts Contracts { get; set; }
-        public virtual Customers Customers { get; set; }
+        public System.DateTime PaymentDate { get; set; }
     }
 }
