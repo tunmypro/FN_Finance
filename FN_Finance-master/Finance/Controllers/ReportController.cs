@@ -48,5 +48,10 @@ namespace Finance.Controllers
         {
             return Redirect("~/Report/WebForm1.aspx");
         }
+
+        public ActionResult viewReportGroup()
+        {
+            return Redirect("~/Report/WebForm2.aspx");
+        }
     }
 }

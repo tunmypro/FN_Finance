@@ -311,6 +311,13 @@
     <Compile Include="Report\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Report\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Validate\ConvertDate.cs" />
     <Compile Include="Validate\IDCardCheck.cs" />
@@ -1485,6 +1492,7 @@
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Report\WebForm1.aspx" />
+    <Content Include="Report\WebForm2.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1592,6 +1600,7 @@
       <LastGenOutput>CrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\eptMoney.rdlc" />
+    <EmbeddedResource Include="Report\Group.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
