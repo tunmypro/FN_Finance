@@ -27,6 +27,9 @@ namespace Finance.Models
         [Required(ErrorMessage = "กรุณากรอกข้อมูล")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public Nullable<System.DateTime> Date_End { get; set; }
+        [Display(Name = "วันที่จ่ายล่าสุด")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public Nullable<System.DateTime> Date_Last { get; set; }
         [Display(Name = "ยอดเงิน")]
         [Required(ErrorMessage = "กรุณากรอกข้อมูล")]
         public Nullable<decimal> Balance { get; set; }

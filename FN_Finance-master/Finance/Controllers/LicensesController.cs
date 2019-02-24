@@ -73,7 +73,7 @@ namespace Finance.Controllers
                 db.License.Add(license);
                 db.SaveChanges();
                 Session["idlicen"] = license.LicenseID;
-                return RedirectToAction("Create", "Contracts",new {id=license.LicenseID });
+                return RedirectToAction("Create", "Contracts", new { id = license.LicenseID });
             }
             ViewBag.LicenseStatusID = new SelectList(db.LicenseStatusDisplay, "LicenseStatusID", "LicenseStatusName", license.LicenseStatusID);
             ViewBag.LicenseType = new SelectList(db.LicenseTypes, "LicenseType", "InterestName", license.LicenseType);
@@ -100,14 +100,25 @@ namespace Finance.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(License license)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(license).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Create");
-            }
             ViewBag.LicenseStatusID = new SelectList(db.LicenseStatusDisplay, "LicenseStatusID", "LicenseStatusName", license.LicenseStatusID);
             ViewBag.LicenseType = new SelectList(db.LicenseTypes, "LicenseType", "InterestName", license.LicenseType);
+            if (ModelState.IsValid)
+            {
+                if (license.Mypic1 != null)
+                {
+                    byte[] img = new byte[license.Mypic1.ContentLength];
+                    license.Mypic1.InputStream.Read(img, 0, license.Mypic1.ContentLength);
+                    license.Licen_img = img;
+                }
+                else
+                {
+                    ModelState.AddModelError("Licen_img", "กรุณาใส่รูป");
+                    return View(license);
+                }
+                db.Entry(license).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View(license);
         }
 

@@ -6,7 +6,32 @@
         <Connections>
           <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Finance5917ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Finance5917ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Finance5917ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
-        <Tables />
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MoneyViewTableAdapter" GeneratorDataComponentClassName="MoneyViewTableAdapter" Name="MoneyView" UserDataComponentName="MoneyViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Finance5917ConnectionString (Web.config)" DbObjectName="Finance5917.dbo.MoneyView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Date_Start, Date_End, Date_Last, Balance, Out_Balance, Per_Month_Amount, Payment_Money, PaymentDate, TotalBalance FROM dbo.MoneyView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Date_Start" DataSetColumn="Date_Start" />
+              <Mapping SourceColumn="Date_End" DataSetColumn="Date_End" />
+              <Mapping SourceColumn="Date_Last" DataSetColumn="Date_Last" />
+              <Mapping SourceColumn="Balance" DataSetColumn="Balance" />
+              <Mapping SourceColumn="Out_Balance" DataSetColumn="Out_Balance" />
+              <Mapping SourceColumn="Per_Month_Amount" DataSetColumn="Per_Month_Amount" />
+              <Mapping SourceColumn="Payment_Money" DataSetColumn="Payment_Money" />
+              <Mapping SourceColumn="PaymentDate" DataSetColumn="PaymentDate" />
+              <Mapping SourceColumn="TotalBalance" DataSetColumn="TotalBalance" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
@@ -25,6 +50,7 @@
               <xs:element name="Per_Month_Amount" msprop:Generator_ColumnVarNameInTable="columnPer_Month_Amount" msprop:Generator_ColumnPropNameInRow="Per_Month_Amount" msprop:Generator_ColumnPropNameInTable="Per_Month_AmountColumn" msprop:Generator_UserColumnName="Per_Month_Amount" type="xs:decimal" />
               <xs:element name="Payment_Money" msprop:Generator_ColumnVarNameInTable="columnPayment_Money" msprop:Generator_ColumnPropNameInRow="Payment_Money" msprop:Generator_ColumnPropNameInTable="Payment_MoneyColumn" msprop:Generator_UserColumnName="Payment_Money" type="xs:decimal" />
               <xs:element name="PaymentDate" msprop:Generator_ColumnVarNameInTable="columnPaymentDate" msprop:Generator_ColumnPropNameInRow="PaymentDate" msprop:Generator_ColumnPropNameInTable="PaymentDateColumn" msprop:Generator_UserColumnName="PaymentDate" type="xs:dateTime" />
+              <xs:element name="TotalBalance" msprop:Generator_ColumnVarNameInTable="columnTotalBalance" msprop:Generator_ColumnPropNameInRow="TotalBalance" msprop:Generator_ColumnPropNameInTable="TotalBalanceColumn" msprop:Generator_UserColumnName="TotalBalance" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

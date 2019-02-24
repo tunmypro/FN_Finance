@@ -126,14 +126,36 @@ namespace Finance.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Customers customers)
         {
+            ViewBag.Status_m = new SelectList(db.StatusCustomer, "StatusID", "StatusType", customers.Status_m);
+            ViewBag.titleid = new SelectList(db.title, "titleid", "titlename", customers.titleid);
             if (ModelState.IsValid)
             {
+                if (customers.Mypic1 != null)
+                {
+                    byte[] img = new byte[customers.Mypic1.ContentLength];
+                    customers.Mypic1.InputStream.Read(img, 0, customers.Mypic1.ContentLength);
+                    customers.Image_m = img;
+                }
+                else
+                {
+                    ModelState.AddModelError("Image_m", "กรุณาใส่รูป");
+                    return View(customers);
+                }
+                if (customers.Mypic2 != null)
+                {
+                    byte[] ID_img = new byte[customers.Mypic2.ContentLength];
+                    customers.Mypic2.InputStream.Read(ID_img, 0, customers.Mypic2.ContentLength);
+                    customers.ID_img_m = ID_img;
+                }
+                else
+                {
+                    ModelState.AddModelError("ID_img_m", "กรุณาใส่รูป");
+                    return View(customers);
+                }
                 db.Entry(customers).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.titleid = new SelectList(db.title, "titleid", "titlename", customers.titleid);
-            ViewBag.Status_m = new SelectList(db.StatusCustomer, "StatusID", "StatusType", customers.Status_m);
             return View(customers);
         }
 

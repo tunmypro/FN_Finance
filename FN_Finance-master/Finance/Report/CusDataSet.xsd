@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CusDataSet" targetNamespace="http://tempuri.org/CusDataSet.xsd" xmlns:mstns="http://tempuri.org/CusDataSet.xsd" xmlns="http://tempuri.org/CusDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Finance5917ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Finance5917ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Finance5917ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_CustomersTableAdapter" GeneratorDataComponentClassName="View_CustomersTableAdapter" Name="View_Customers" UserDataComponentName="View_CustomersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Finance5917ConnectionString (Web.config)" DbObjectName="Finance5917.dbo.View_Customers" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_Card_m, titleid, Name_m, Lname_m, ID_img_m, Image_m, Status_m, Salary_m, Career_m, Zipcode_m, Province_m, Amphur_m, District_m, Address_m, titlename, Expr1, StatusID, StatusType FROM dbo.View_Customers</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Card_m" DataSetColumn="ID_Card_m" />
+              <Mapping SourceColumn="titleid" DataSetColumn="titleid" />
+              <Mapping SourceColumn="Name_m" DataSetColumn="Name_m" />
+              <Mapping SourceColumn="Lname_m" DataSetColumn="Lname_m" />
+              <Mapping SourceColumn="ID_img_m" DataSetColumn="ID_img_m" />
+              <Mapping SourceColumn="Image_m" DataSetColumn="Image_m" />
+              <Mapping SourceColumn="Status_m" DataSetColumn="Status_m" />
+              <Mapping SourceColumn="Salary_m" DataSetColumn="Salary_m" />
+              <Mapping SourceColumn="Career_m" DataSetColumn="Career_m" />
+              <Mapping SourceColumn="Zipcode_m" DataSetColumn="Zipcode_m" />
+              <Mapping SourceColumn="Province_m" DataSetColumn="Province_m" />
+              <Mapping SourceColumn="Amphur_m" DataSetColumn="Amphur_m" />
+              <Mapping SourceColumn="District_m" DataSetColumn="District_m" />
+              <Mapping SourceColumn="Address_m" DataSetColumn="Address_m" />
+              <Mapping SourceColumn="titlename" DataSetColumn="titlename" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
+              <Mapping SourceColumn="StatusType" DataSetColumn="StatusType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CusDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CusDataSet" msprop:Generator_UserDSName="CusDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_Customers" msprop:Generator_TableClassName="View_CustomersDataTable" msprop:Generator_TableVarName="tableView_Customers" msprop:Generator_TablePropName="View_Customers" msprop:Generator_RowDeletingName="View_CustomersRowDeleting" msprop:Generator_RowChangingName="View_CustomersRowChanging" msprop:Generator_RowEvHandlerName="View_CustomersRowChangeEventHandler" msprop:Generator_RowDeletedName="View_CustomersRowDeleted" msprop:Generator_UserTableName="View_Customers" msprop:Generator_RowChangedName="View_CustomersRowChanged" msprop:Generator_RowEvArgName="View_CustomersRowChangeEvent" msprop:Generator_RowClassName="View_CustomersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Card_m" msprop:Generator_ColumnVarNameInTable="columnID_Card_m" msprop:Generator_ColumnPropNameInRow="ID_Card_m" msprop:Generator_ColumnPropNameInTable="ID_Card_mColumn" msprop:Generator_UserColumnName="ID_Card_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="titleid" msprop:Generator_ColumnVarNameInTable="columntitleid" msprop:Generator_ColumnPropNameInRow="titleid" msprop:Generator_ColumnPropNameInTable="titleidColumn" msprop:Generator_UserColumnName="titleid" type="xs:int" />
+              <xs:element name="Name_m" msprop:Generator_ColumnVarNameInTable="columnName_m" msprop:Generator_ColumnPropNameInRow="Name_m" msprop:Generator_ColumnPropNameInTable="Name_mColumn" msprop:Generator_UserColumnName="Name_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lname_m" msprop:Generator_ColumnVarNameInTable="columnLname_m" msprop:Generator_ColumnPropNameInRow="Lname_m" msprop:Generator_ColumnPropNameInTable="Lname_mColumn" msprop:Generator_UserColumnName="Lname_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_img_m" msprop:Generator_ColumnVarNameInTable="columnID_img_m" msprop:Generator_ColumnPropNameInRow="ID_img_m" msprop:Generator_ColumnPropNameInTable="ID_img_mColumn" msprop:Generator_UserColumnName="ID_img_m" type="xs:base64Binary" />
+              <xs:element name="Image_m" msprop:Generator_ColumnVarNameInTable="columnImage_m" msprop:Generator_ColumnPropNameInRow="Image_m" msprop:Generator_ColumnPropNameInTable="Image_mColumn" msprop:Generator_UserColumnName="Image_m" type="xs:base64Binary" />
+              <xs:element name="Status_m" msprop:Generator_ColumnVarNameInTable="columnStatus_m" msprop:Generator_ColumnPropNameInRow="Status_m" msprop:Generator_ColumnPropNameInTable="Status_mColumn" msprop:Generator_UserColumnName="Status_m" type="xs:int" />
+              <xs:element name="Salary_m" msprop:Generator_ColumnVarNameInTable="columnSalary_m" msprop:Generator_ColumnPropNameInRow="Salary_m" msprop:Generator_ColumnPropNameInTable="Salary_mColumn" msprop:Generator_UserColumnName="Salary_m" type="xs:decimal" />
+              <xs:element name="Career_m" msprop:Generator_ColumnVarNameInTable="columnCareer_m" msprop:Generator_ColumnPropNameInRow="Career_m" msprop:Generator_ColumnPropNameInTable="Career_mColumn" msprop:Generator_UserColumnName="Career_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Zipcode_m" msprop:Generator_ColumnVarNameInTable="columnZipcode_m" msprop:Generator_ColumnPropNameInRow="Zipcode_m" msprop:Generator_ColumnPropNameInTable="Zipcode_mColumn" msprop:Generator_UserColumnName="Zipcode_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Province_m" msprop:Generator_ColumnVarNameInTable="columnProvince_m" msprop:Generator_ColumnPropNameInRow="Province_m" msprop:Generator_ColumnPropNameInTable="Province_mColumn" msprop:Generator_UserColumnName="Province_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amphur_m" msprop:Generator_ColumnVarNameInTable="columnAmphur_m" msprop:Generator_ColumnPropNameInRow="Amphur_m" msprop:Generator_ColumnPropNameInTable="Amphur_mColumn" msprop:Generator_UserColumnName="Amphur_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="District_m" msprop:Generator_ColumnVarNameInTable="columnDistrict_m" msprop:Generator_ColumnPropNameInRow="District_m" msprop:Generator_ColumnPropNameInTable="District_mColumn" msprop:Generator_UserColumnName="District_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address_m" msprop:Generator_ColumnVarNameInTable="columnAddress_m" msprop:Generator_ColumnPropNameInRow="Address_m" msprop:Generator_ColumnPropNameInTable="Address_mColumn" msprop:Generator_UserColumnName="Address_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="titlename" msprop:Generator_ColumnVarNameInTable="columntitlename" msprop:Generator_ColumnPropNameInRow="titlename" msprop:Generator_ColumnPropNameInTable="titlenameColumn" msprop:Generator_UserColumnName="titlename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:int" />
+              <xs:element name="StatusType" msprop:Generator_ColumnVarNameInTable="columnStatusType" msprop:Generator_ColumnPropNameInRow="StatusType" msprop:Generator_ColumnPropNameInTable="StatusTypeColumn" msprop:Generator_UserColumnName="StatusType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_Customers" />
+      <xs:field xpath="mstns:ID_Card_m" />
+      <xs:field xpath="mstns:Expr1" />
+      <xs:field xpath="mstns:StatusID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

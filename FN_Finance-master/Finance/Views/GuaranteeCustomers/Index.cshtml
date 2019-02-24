@@ -10,77 +10,64 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ID_Card_g)
-        </th>
-        <th>
-            ชื่อ-นามสกุล
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Career_g)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Salary_g)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image_g)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ID_img_g)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StatusCustomer.StatusType)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_Card_g)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.title.titlename) @Html.DisplayFor(modelItem => item.Name_g)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lname_g)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Career_g)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Salary_g)
-        </td>
-        <td>
-            @if (item.Image_g != null)
-            {
-                <img src="data:image/png;base64,@Convert.ToBase64String(item.Image_g)" width="100">
-            }
-        </td>
-        <td>
-            @if (item.ID_img_g != null)
-            {
-                <img src="data:image/png;base64,@Convert.ToBase64String(item.ID_img_g)" width="100">
-            }
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StatusCustomer.StatusType)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID_Card_g }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID_Card_g }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID_Card_g }
-          , new { onclick = "return confirm('คุณแน่ใจว่าจะลบ ?')" })
-        </td>
-    </tr>
-}
-
+<table class="table table-striped table-bordered" id="example" style="width: 100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_Card_g)
+            </th>
+            <th>
+                ชื่อ-นามสกุล
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Career_g)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary_g)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusCustomer.StatusType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Card_g)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title.titlename) @Html.DisplayFor(modelItem => item.Name_g) @Html.DisplayFor(modelItem => item.Lname_g)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Career_g)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary_g)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusCustomer.StatusType)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_Card_g }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_Card_g })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#example').DataTable();
+        } );
+    </script>
+}

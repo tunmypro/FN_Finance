@@ -28,14 +28,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tel)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Address_m)
         </dt>
 
@@ -92,19 +84,25 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Image_m)
+            รูปถ่าย
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image_m)
+            @if (Model.Image_m != null)
+            {
+                <img src="data:image/png;base64,@Convert.ToBase64String(Model.Image_m)" width="100">
+            }
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ID_img_m)
+            รูปบัตรประชาชน
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ID_img_m)
+            @if (Model.ID_img_m != null)
+            {
+                <img src="data:image/png;base64,@Convert.ToBase64String(Model.ID_img_m)" width="100">
+            }
         </dd>
 
         <dt>

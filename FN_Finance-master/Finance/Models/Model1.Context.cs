@@ -37,5 +37,10 @@ namespace Finance.Models
         public virtual DbSet<title> title { get; set; }
         public virtual DbSet<User_Finance> User_Finance { get; set; }
         public virtual DbSet<MoneyView> MoneyView { get; set; }
+        public virtual DbSet<View_Contract> View_Contract { get; set; }
+        public virtual DbSet<View_Customers> View_Customers { get; set; }
+        public virtual DbSet<View_Guarantee> View_Guarantee { get; set; }
+        public virtual DbSet<View_License> View_License { get; set; }
+        public virtual DbSet<View_Pay> View_Pay { get; set; }
     }
 }

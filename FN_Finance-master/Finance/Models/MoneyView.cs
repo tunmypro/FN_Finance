@@ -22,5 +22,6 @@ namespace Finance.Models
         public decimal Per_Month_Amount { get; set; }
         public decimal Payment_Money { get; set; }
         public System.DateTime PaymentDate { get; set; }
+        public decimal TotalBalance { get; set; }
     }
 }

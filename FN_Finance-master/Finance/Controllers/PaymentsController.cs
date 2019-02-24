@@ -129,7 +129,7 @@ namespace Finance.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PaymentID,ID_Card_m,UserID,ContractID,PaymentDate,Payment_Money")] Payments payments)
+        public ActionResult Edit(Payments payments)
         {
             if (ModelState.IsValid)
             {

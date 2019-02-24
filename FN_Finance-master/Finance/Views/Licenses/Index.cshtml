@@ -20,9 +20,6 @@
                 @Html.DisplayNameFor(model => model.LicenseName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Licen_img)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.KeepAddressID)
             </th>
             <th>
@@ -43,70 +40,58 @@
             <th>
                 @Html.DisplayNameFor(model => model.LicenseTypes.InterestName)
             </th>
+            <th></th>
         </tr>
     </thead>
-
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LicensePlate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LicenseName)
-            </td>
-            <td>
-                @if (item.Licen_img != null)
-                {
-                    <img src="data:image/png;base64,@Convert.ToBase64String(item.Licen_img)" width="100">
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KeepAddressID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.District_l)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amphur_l)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Province_l)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zipcode_l)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LicenseStatusDisplay.LicenseStatusName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LicenseTypes.InterestName)
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LicensePlate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LicenseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KeepAddressID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.District_l)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amphur_l)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Province_l)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zipcode_l)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LicenseStatusDisplay.LicenseStatusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LicenseTypes.InterestName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.LicenseID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.LicenseID })
+                </td>
+            </tr>
         }
     </tbody>
-
 </table>
 
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 
 
 @section scripts{
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function () {
-            var table = $('#example').DataTable(
-                {});
-
-        });
+        $(document).ready( function () {
+            $('#example').DataTable();
+        } );
     </script>
-
-
 }

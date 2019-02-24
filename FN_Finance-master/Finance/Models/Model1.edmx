@@ -17,6 +17,7 @@
           <Property Name="Date_End" Type="date" />
           <Property Name="Date_Last" Type="date" />
           <Property Name="Balance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="TotalBalance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Out_Balance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Per_Month_Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
@@ -143,6 +144,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
             <PropertyRef Name="Per_Month_Amount" />
             <PropertyRef Name="Payment_Money" />
             <PropertyRef Name="PaymentDate" />
+            <PropertyRef Name="TotalBalance" />
           </Key>
           <Property Name="Date_Start" Type="date" />
           <Property Name="Date_End" Type="date" />
@@ -152,6 +154,151 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
           <Property Name="Per_Month_Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Payment_Money" Type="decimal" Precision="9" Scale="2" Nullable="false" />
           <Property Name="PaymentDate" Type="date" Nullable="false" />
+          <Property Name="TotalBalance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Finance5917.dbo.View_Contract' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Contract">
+          <Key>
+            <PropertyRef Name="ContractID" />
+            <PropertyRef Name="Name_m" />
+            <PropertyRef Name="Lname_m" />
+            <PropertyRef Name="Balance" />
+            <PropertyRef Name="Per_Month_Amount" />
+          </Key>
+          <Property Name="ContractID" Type="varchar" MaxLength="22" Nullable="false" />
+          <Property Name="Name_m" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lname_m" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="titlename" Type="nchar" MaxLength="10" />
+          <Property Name="Balance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Per_Month_Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Date_Start" Type="date" />
+          <Property Name="Date_End" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Finance5917.dbo.View_Customers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Customers">
+          <Key>
+            <PropertyRef Name="ID_Card_m" />
+            <PropertyRef Name="titleid" />
+            <PropertyRef Name="Name_m" />
+            <PropertyRef Name="Lname_m" />
+            <PropertyRef Name="ID_img_m" />
+            <PropertyRef Name="Image_m" />
+            <PropertyRef Name="Status_m" />
+            <PropertyRef Name="Salary_m" />
+            <PropertyRef Name="Career_m" />
+            <PropertyRef Name="Zipcode_m" />
+            <PropertyRef Name="Province_m" />
+            <PropertyRef Name="Amphur_m" />
+            <PropertyRef Name="District_m" />
+            <PropertyRef Name="Address_m" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="ID_Card_m" Type="char" MaxLength="13" Nullable="false" />
+          <Property Name="titleid" Type="int" Nullable="false" />
+          <Property Name="Name_m" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lname_m" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_img_m" Type="image" Nullable="false" />
+          <Property Name="Image_m" Type="image" Nullable="false" />
+          <Property Name="Status_m" Type="int" Nullable="false" />
+          <Property Name="Salary_m" Type="money" Nullable="false" />
+          <Property Name="Career_m" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Zipcode_m" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Province_m" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Amphur_m" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="District_m" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Address_m" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="titlename" Type="nchar" MaxLength="10" />
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="StatusType" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Finance5917.dbo.View_Guarantee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Guarantee">
+          <Key>
+            <PropertyRef Name="ID_Card_g" />
+            <PropertyRef Name="Lname_g" />
+            <PropertyRef Name="Name_g" />
+            <PropertyRef Name="ID_img_g" />
+            <PropertyRef Name="Image_g" />
+            <PropertyRef Name="Status_g" />
+            <PropertyRef Name="Salary_g" />
+            <PropertyRef Name="Career_g" />
+            <PropertyRef Name="Zipcode_g" />
+            <PropertyRef Name="Province_g" />
+            <PropertyRef Name="Amphur_g" />
+            <PropertyRef Name="District_g" />
+            <PropertyRef Name="Address_g" />
+            <PropertyRef Name="titleid" />
+            <PropertyRef Name="StatusID" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="ID_Card_g" Type="char" MaxLength="13" Nullable="false" />
+          <Property Name="Lname_g" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name_g" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_img_g" Type="image" Nullable="false" />
+          <Property Name="Image_g" Type="image" Nullable="false" />
+          <Property Name="Status_g" Type="int" Nullable="false" />
+          <Property Name="Salary_g" Type="money" Nullable="false" />
+          <Property Name="Career_g" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Zipcode_g" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Province_g" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Amphur_g" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="District_g" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Address_g" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="titleid" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="StatusType" Type="varchar" MaxLength="20" />
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="titlename" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Finance5917.dbo.View_License' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_License">
+          <Key>
+            <PropertyRef Name="LicenseID" />
+            <PropertyRef Name="LicensePlate" />
+            <PropertyRef Name="KeepAddressID" />
+            <PropertyRef Name="LicenseName" />
+            <PropertyRef Name="District_l" />
+            <PropertyRef Name="Amphur_l" />
+            <PropertyRef Name="Province_l" />
+            <PropertyRef Name="Zipcode_l" />
+            <PropertyRef Name="Licen_img" />
+          </Key>
+          <Property Name="LicenseID" Type="int" Nullable="false" />
+          <Property Name="LicensePlate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="KeepAddressID" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="LicenseName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="District_l" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Amphur_l" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Province_l" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Zipcode_l" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Licen_img" Type="image" Nullable="false" />
+          <Property Name="LicenseStatusName" Type="varchar" MaxLength="20" />
+          <Property Name="InterestName" Type="varchar" MaxLength="30" />
+          <Property Name="InterestRate" Type="decimal" Precision="3" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Finance5917.dbo.View_Pay' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Pay">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+            <PropertyRef Name="ID_Card_m" />
+            <PropertyRef Name="NameUser" />
+            <PropertyRef Name="ContractID" />
+            <PropertyRef Name="PaymentDate" />
+            <PropertyRef Name="Payment_Money" />
+          </Key>
+          <Property Name="PaymentID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_Card_m" Type="char" MaxLength="13" Nullable="false" />
+          <Property Name="NameUser" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContractID" Type="varchar" MaxLength="22" Nullable="false" />
+          <Property Name="PaymentDate" Type="date" Nullable="false" />
+          <Property Name="Payment_Money" Type="decimal" Precision="9" Scale="2" Nullable="false" />
         </EntityType>
         <Association Name="FK_Contracts_Customers">
           <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
@@ -201,7 +348,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Customers_title">
+        <Association Name="FK_Customers_title1">
           <End Role="title" Type="Self.title" Multiplicity="1" />
           <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
           <ReferentialConstraint>
@@ -318,8 +465,91 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
     [MoneyView].[Out_Balance] AS [Out_Balance], 
     [MoneyView].[Per_Month_Amount] AS [Per_Month_Amount], 
     [MoneyView].[Payment_Money] AS [Payment_Money], 
-    [MoneyView].[PaymentDate] AS [PaymentDate]
+    [MoneyView].[PaymentDate] AS [PaymentDate], 
+    [MoneyView].[TotalBalance] AS [TotalBalance]
     FROM [dbo].[MoneyView] AS [MoneyView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Contract" EntityType="Self.View_Contract" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Contract].[ContractID] AS [ContractID], 
+    [View_Contract].[Name_m] AS [Name_m], 
+    [View_Contract].[Lname_m] AS [Lname_m], 
+    [View_Contract].[titlename] AS [titlename], 
+    [View_Contract].[Balance] AS [Balance], 
+    [View_Contract].[Per_Month_Amount] AS [Per_Month_Amount], 
+    [View_Contract].[Date_Start] AS [Date_Start], 
+    [View_Contract].[Date_End] AS [Date_End]
+    FROM [dbo].[View_Contract] AS [View_Contract]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Customers" EntityType="Self.View_Customers" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Customers].[ID_Card_m] AS [ID_Card_m], 
+    [View_Customers].[titleid] AS [titleid], 
+    [View_Customers].[Name_m] AS [Name_m], 
+    [View_Customers].[Lname_m] AS [Lname_m], 
+    [View_Customers].[ID_img_m] AS [ID_img_m], 
+    [View_Customers].[Image_m] AS [Image_m], 
+    [View_Customers].[Status_m] AS [Status_m], 
+    [View_Customers].[Salary_m] AS [Salary_m], 
+    [View_Customers].[Career_m] AS [Career_m], 
+    [View_Customers].[Zipcode_m] AS [Zipcode_m], 
+    [View_Customers].[Province_m] AS [Province_m], 
+    [View_Customers].[Amphur_m] AS [Amphur_m], 
+    [View_Customers].[District_m] AS [District_m], 
+    [View_Customers].[Address_m] AS [Address_m], 
+    [View_Customers].[titlename] AS [titlename], 
+    [View_Customers].[Expr1] AS [Expr1], 
+    [View_Customers].[StatusID] AS [StatusID], 
+    [View_Customers].[StatusType] AS [StatusType]
+    FROM [dbo].[View_Customers] AS [View_Customers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Guarantee" EntityType="Self.View_Guarantee" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Guarantee].[ID_Card_g] AS [ID_Card_g], 
+    [View_Guarantee].[Lname_g] AS [Lname_g], 
+    [View_Guarantee].[Name_g] AS [Name_g], 
+    [View_Guarantee].[ID_img_g] AS [ID_img_g], 
+    [View_Guarantee].[Image_g] AS [Image_g], 
+    [View_Guarantee].[Status_g] AS [Status_g], 
+    [View_Guarantee].[Salary_g] AS [Salary_g], 
+    [View_Guarantee].[Career_g] AS [Career_g], 
+    [View_Guarantee].[Zipcode_g] AS [Zipcode_g], 
+    [View_Guarantee].[Province_g] AS [Province_g], 
+    [View_Guarantee].[Amphur_g] AS [Amphur_g], 
+    [View_Guarantee].[District_g] AS [District_g], 
+    [View_Guarantee].[Address_g] AS [Address_g], 
+    [View_Guarantee].[titleid] AS [titleid], 
+    [View_Guarantee].[StatusID] AS [StatusID], 
+    [View_Guarantee].[StatusType] AS [StatusType], 
+    [View_Guarantee].[Expr1] AS [Expr1], 
+    [View_Guarantee].[titlename] AS [titlename]
+    FROM [dbo].[View_Guarantee] AS [View_Guarantee]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_License" EntityType="Self.View_License" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_License].[LicenseID] AS [LicenseID], 
+    [View_License].[LicensePlate] AS [LicensePlate], 
+    [View_License].[KeepAddressID] AS [KeepAddressID], 
+    [View_License].[LicenseName] AS [LicenseName], 
+    [View_License].[District_l] AS [District_l], 
+    [View_License].[Amphur_l] AS [Amphur_l], 
+    [View_License].[Province_l] AS [Province_l], 
+    [View_License].[Zipcode_l] AS [Zipcode_l], 
+    [View_License].[Licen_img] AS [Licen_img], 
+    [View_License].[LicenseStatusName] AS [LicenseStatusName], 
+    [View_License].[InterestName] AS [InterestName], 
+    [View_License].[InterestRate] AS [InterestRate]
+    FROM [dbo].[View_License] AS [View_License]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Pay" EntityType="Self.View_Pay" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Pay].[PaymentID] AS [PaymentID], 
+    [View_Pay].[ID_Card_m] AS [ID_Card_m], 
+    [View_Pay].[NameUser] AS [NameUser], 
+    [View_Pay].[ContractID] AS [ContractID], 
+    [View_Pay].[PaymentDate] AS [PaymentDate], 
+    [View_Pay].[Payment_Money] AS [Payment_Money]
+    FROM [dbo].[View_Pay] AS [View_Pay]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Contracts_Customers" Association="Self.FK_Contracts_Customers">
             <End Role="Customers" EntitySet="Customers" />
@@ -337,7 +567,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
             <End Role="StatusCustomer" EntitySet="StatusCustomer" />
             <End Role="Customers" EntitySet="Customers" />
           </AssociationSet>
-          <AssociationSet Name="FK_Customers_title" Association="Self.FK_Customers_title">
+          <AssociationSet Name="FK_Customers_title1" Association="Self.FK_Customers_title1">
             <End Role="title" EntitySet="title" />
             <End Role="Customers" EntitySet="Customers" />
           </AssociationSet>
@@ -386,6 +616,12 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
           <EntitySet Name="StatusUser" EntityType="Finance5917Model.StatusUser" />
           <EntitySet Name="title" EntityType="Finance5917Model.title" />
           <EntitySet Name="User_Finance" EntityType="Finance5917Model.User_Finance" />
+          <EntitySet Name="MoneyView" EntityType="Finance5917Model.MoneyView" />
+          <EntitySet Name="View_Contract" EntityType="Finance5917Model.View_Contract" />
+          <EntitySet Name="View_Customers" EntityType="Finance5917Model.View_Customers" />
+          <EntitySet Name="View_Guarantee" EntityType="Finance5917Model.View_Guarantee" />
+          <EntitySet Name="View_License" EntityType="Finance5917Model.View_License" />
+          <EntitySet Name="View_Pay" EntityType="Finance5917Model.View_Pay" />
           <AssociationSet Name="FK_Contracts_Customers" Association="Finance5917Model.FK_Contracts_Customers">
             <End Role="Customers" EntitySet="Customers" />
             <End Role="Contracts" EntitySet="Contracts" />
@@ -406,7 +642,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
             <End Role="StatusCustomer" EntitySet="StatusCustomer" />
             <End Role="Customers" EntitySet="Customers" />
           </AssociationSet>
-          <AssociationSet Name="FK_Customers_title" Association="Finance5917Model.FK_Customers_title">
+          <AssociationSet Name="FK_Customers_title1" Association="Finance5917Model.FK_Customers_title1">
             <End Role="title" EntitySet="title" />
             <End Role="Customers" EntitySet="Customers" />
           </AssociationSet>
@@ -434,7 +670,6 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
             <End Role="StatusUser" EntitySet="StatusUser" />
             <End Role="User_Finance" EntitySet="User_Finance" />
           </AssociationSet>
-          <EntitySet Name="MoneyView" EntityType="Finance5917Model.MoneyView" />
         </EntityContainer>
         <EntityType Name="Contracts">
           <Key>
@@ -448,6 +683,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
           <Property Name="Date_End" Type="DateTime" Precision="0" />
           <Property Name="Date_Last" Type="DateTime" Precision="0" />
           <Property Name="Balance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="TotalBalance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="Out_Balance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="Per_Month_Amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <NavigationProperty Name="Customers" Relationship="Finance5917Model.FK_Contracts_Customers" FromRole="Contracts" ToRole="Customers" />
@@ -476,7 +712,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
           <Property Name="ID_img_m" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Contracts" Relationship="Finance5917Model.FK_Contracts_Customers" FromRole="Customers" ToRole="Contracts" />
           <NavigationProperty Name="StatusCustomer" Relationship="Finance5917Model.FK_Customers_StatusType" FromRole="Customers" ToRole="StatusCustomer" />
-          <NavigationProperty Name="title" Relationship="Finance5917Model.FK_Customers_title" FromRole="Customers" ToRole="title" />
+          <NavigationProperty Name="title" Relationship="Finance5917Model.FK_Customers_title1" FromRole="Customers" ToRole="title" />
           <NavigationProperty Name="Payments" Relationship="Finance5917Model.FK_Payments_Customers" FromRole="Customers" ToRole="Payments" />
         </EntityType>
         <EntityType Name="GuaranteeCustomers">
@@ -574,7 +810,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
           </Key>
           <Property Name="titleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="titlename" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Customers" Relationship="Finance5917Model.FK_Customers_title" FromRole="title" ToRole="Customers" />
+          <NavigationProperty Name="Customers" Relationship="Finance5917Model.FK_Customers_title1" FromRole="title" ToRole="Customers" />
           <NavigationProperty Name="GuaranteeCustomers" Relationship="Finance5917Model.FK_GuaranteeCustomers_title" FromRole="title" ToRole="GuaranteeCustomers" />
         </EntityType>
         <EntityType Name="User_Finance">
@@ -588,6 +824,159 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
           <Property Name="Lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="StatusUser" Type="Int32" Nullable="false" />
           <NavigationProperty Name="StatusUser1" Relationship="Finance5917Model.FK_User_Finance_StatusUser" FromRole="User_Finance" ToRole="StatusUser" />
+        </EntityType>
+        <EntityType Name="MoneyView">
+          <Key>
+            <PropertyRef Name="Balance" />
+            <PropertyRef Name="Out_Balance" />
+            <PropertyRef Name="Per_Month_Amount" />
+            <PropertyRef Name="Payment_Money" />
+            <PropertyRef Name="PaymentDate" />
+            <PropertyRef Name="TotalBalance" />
+          </Key>
+          <Property Name="Date_Start" Type="DateTime" Precision="0" />
+          <Property Name="Date_End" Type="DateTime" Precision="0" />
+          <Property Name="Date_Last" Type="DateTime" Precision="0" />
+          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Out_Balance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Per_Month_Amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Payment_Money" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+          <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TotalBalance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="View_Contract">
+          <Key>
+            <PropertyRef Name="ContractID" />
+            <PropertyRef Name="Name_m" />
+            <PropertyRef Name="Lname_m" />
+            <PropertyRef Name="Balance" />
+            <PropertyRef Name="Per_Month_Amount" />
+          </Key>
+          <Property Name="ContractID" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+          <Property Name="Name_m" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lname_m" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="titlename" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Per_Month_Amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Date_Start" Type="DateTime" Precision="0" />
+          <Property Name="Date_End" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="View_Customers">
+          <Key>
+            <PropertyRef Name="ID_Card_m" />
+            <PropertyRef Name="titleid" />
+            <PropertyRef Name="Name_m" />
+            <PropertyRef Name="Lname_m" />
+            <PropertyRef Name="ID_img_m" />
+            <PropertyRef Name="Image_m" />
+            <PropertyRef Name="Status_m" />
+            <PropertyRef Name="Salary_m" />
+            <PropertyRef Name="Career_m" />
+            <PropertyRef Name="Zipcode_m" />
+            <PropertyRef Name="Province_m" />
+            <PropertyRef Name="Amphur_m" />
+            <PropertyRef Name="District_m" />
+            <PropertyRef Name="Address_m" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="ID_Card_m" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="titleid" Type="Int32" Nullable="false" />
+          <Property Name="Name_m" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lname_m" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_img_m" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Image_m" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Status_m" Type="Int32" Nullable="false" />
+          <Property Name="Salary_m" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Career_m" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zipcode_m" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Province_m" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Amphur_m" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="District_m" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Address_m" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="titlename" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Expr1" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="StatusType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_Guarantee">
+          <Key>
+            <PropertyRef Name="ID_Card_g" />
+            <PropertyRef Name="Lname_g" />
+            <PropertyRef Name="Name_g" />
+            <PropertyRef Name="ID_img_g" />
+            <PropertyRef Name="Image_g" />
+            <PropertyRef Name="Status_g" />
+            <PropertyRef Name="Salary_g" />
+            <PropertyRef Name="Career_g" />
+            <PropertyRef Name="Zipcode_g" />
+            <PropertyRef Name="Province_g" />
+            <PropertyRef Name="Amphur_g" />
+            <PropertyRef Name="District_g" />
+            <PropertyRef Name="Address_g" />
+            <PropertyRef Name="titleid" />
+            <PropertyRef Name="StatusID" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="ID_Card_g" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="Lname_g" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name_g" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_img_g" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Image_g" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Status_g" Type="Int32" Nullable="false" />
+          <Property Name="Salary_g" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Career_g" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zipcode_g" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Province_g" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Amphur_g" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="District_g" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Address_g" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="titleid" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="StatusType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Expr1" Type="Int32" Nullable="false" />
+          <Property Name="titlename" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_License">
+          <Key>
+            <PropertyRef Name="LicenseID" />
+            <PropertyRef Name="LicensePlate" />
+            <PropertyRef Name="KeepAddressID" />
+            <PropertyRef Name="LicenseName" />
+            <PropertyRef Name="District_l" />
+            <PropertyRef Name="Amphur_l" />
+            <PropertyRef Name="Province_l" />
+            <PropertyRef Name="Zipcode_l" />
+            <PropertyRef Name="Licen_img" />
+          </Key>
+          <Property Name="LicenseID" Type="Int32" Nullable="false" />
+          <Property Name="LicensePlate" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="KeepAddressID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LicenseName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="District_l" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Amphur_l" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Province_l" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zipcode_l" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Licen_img" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LicenseStatusName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="InterestName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="InterestRate" Type="Decimal" Precision="3" Scale="2" />
+        </EntityType>
+        <EntityType Name="View_Pay">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+            <PropertyRef Name="ID_Card_m" />
+            <PropertyRef Name="NameUser" />
+            <PropertyRef Name="ContractID" />
+            <PropertyRef Name="PaymentDate" />
+            <PropertyRef Name="Payment_Money" />
+          </Key>
+          <Property Name="PaymentID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Card_m" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="NameUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContractID" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Payment_Money" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
         </EntityType>
         <Association Name="FK_Contracts_Customers">
           <End Type="Finance5917Model.Customers" Role="Customers" Multiplicity="1" />
@@ -649,7 +1038,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Customers_title">
+        <Association Name="FK_Customers_title1">
           <End Type="Finance5917Model.title" Role="title" Multiplicity="1" />
           <End Type="Finance5917Model.Customers" Role="Customers" Multiplicity="*" />
           <ReferentialConstraint>
@@ -733,23 +1122,6 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="MoneyView">
-          <Key>
-            <PropertyRef Name="Balance" />
-            <PropertyRef Name="Out_Balance" />
-            <PropertyRef Name="Per_Month_Amount" />
-            <PropertyRef Name="Payment_Money" />
-            <PropertyRef Name="PaymentDate" />
-          </Key>
-          <Property Name="Date_Start" Type="DateTime" Precision="0" />
-          <Property Name="Date_End" Type="DateTime" Precision="0" />
-          <Property Name="Date_Last" Type="DateTime" Precision="0" />
-          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-          <Property Name="Out_Balance" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-          <Property Name="Per_Month_Amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-          <Property Name="Payment_Money" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
-          <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="0" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -761,6 +1133,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
               <MappingFragment StoreEntitySet="Contracts">
                 <ScalarProperty Name="Per_Month_Amount" ColumnName="Per_Month_Amount" />
                 <ScalarProperty Name="Out_Balance" ColumnName="Out_Balance" />
+                <ScalarProperty Name="TotalBalance" ColumnName="TotalBalance" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="Date_Last" ColumnName="Date_Last" />
                 <ScalarProperty Name="Date_End" ColumnName="Date_End" />
@@ -899,6 +1272,7 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
           <EntitySetMapping Name="MoneyView">
             <EntityTypeMapping TypeName="Finance5917Model.MoneyView">
               <MappingFragment StoreEntitySet="MoneyView">
+                <ScalarProperty Name="TotalBalance" ColumnName="TotalBalance" />
                 <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
                 <ScalarProperty Name="Payment_Money" ColumnName="Payment_Money" />
                 <ScalarProperty Name="Per_Month_Amount" ColumnName="Per_Month_Amount" />
@@ -907,6 +1281,98 @@ warning 6002: The table/view 'Finance5917.dbo.MoneyView' does not have a primary
                 <ScalarProperty Name="Date_Last" ColumnName="Date_Last" />
                 <ScalarProperty Name="Date_End" ColumnName="Date_End" />
                 <ScalarProperty Name="Date_Start" ColumnName="Date_Start" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Contract">
+            <EntityTypeMapping TypeName="Finance5917Model.View_Contract">
+              <MappingFragment StoreEntitySet="View_Contract">
+                <ScalarProperty Name="Date_End" ColumnName="Date_End" />
+                <ScalarProperty Name="Date_Start" ColumnName="Date_Start" />
+                <ScalarProperty Name="Per_Month_Amount" ColumnName="Per_Month_Amount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="titlename" ColumnName="titlename" />
+                <ScalarProperty Name="Lname_m" ColumnName="Lname_m" />
+                <ScalarProperty Name="Name_m" ColumnName="Name_m" />
+                <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Customers">
+            <EntityTypeMapping TypeName="Finance5917Model.View_Customers">
+              <MappingFragment StoreEntitySet="View_Customers">
+                <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="titlename" ColumnName="titlename" />
+                <ScalarProperty Name="Address_m" ColumnName="Address_m" />
+                <ScalarProperty Name="District_m" ColumnName="District_m" />
+                <ScalarProperty Name="Amphur_m" ColumnName="Amphur_m" />
+                <ScalarProperty Name="Province_m" ColumnName="Province_m" />
+                <ScalarProperty Name="Zipcode_m" ColumnName="Zipcode_m" />
+                <ScalarProperty Name="Career_m" ColumnName="Career_m" />
+                <ScalarProperty Name="Salary_m" ColumnName="Salary_m" />
+                <ScalarProperty Name="Status_m" ColumnName="Status_m" />
+                <ScalarProperty Name="Image_m" ColumnName="Image_m" />
+                <ScalarProperty Name="ID_img_m" ColumnName="ID_img_m" />
+                <ScalarProperty Name="Lname_m" ColumnName="Lname_m" />
+                <ScalarProperty Name="Name_m" ColumnName="Name_m" />
+                <ScalarProperty Name="titleid" ColumnName="titleid" />
+                <ScalarProperty Name="ID_Card_m" ColumnName="ID_Card_m" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Guarantee">
+            <EntityTypeMapping TypeName="Finance5917Model.View_Guarantee">
+              <MappingFragment StoreEntitySet="View_Guarantee">
+                <ScalarProperty Name="titlename" ColumnName="titlename" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="titleid" ColumnName="titleid" />
+                <ScalarProperty Name="Address_g" ColumnName="Address_g" />
+                <ScalarProperty Name="District_g" ColumnName="District_g" />
+                <ScalarProperty Name="Amphur_g" ColumnName="Amphur_g" />
+                <ScalarProperty Name="Province_g" ColumnName="Province_g" />
+                <ScalarProperty Name="Zipcode_g" ColumnName="Zipcode_g" />
+                <ScalarProperty Name="Career_g" ColumnName="Career_g" />
+                <ScalarProperty Name="Salary_g" ColumnName="Salary_g" />
+                <ScalarProperty Name="Status_g" ColumnName="Status_g" />
+                <ScalarProperty Name="Image_g" ColumnName="Image_g" />
+                <ScalarProperty Name="ID_img_g" ColumnName="ID_img_g" />
+                <ScalarProperty Name="Name_g" ColumnName="Name_g" />
+                <ScalarProperty Name="Lname_g" ColumnName="Lname_g" />
+                <ScalarProperty Name="ID_Card_g" ColumnName="ID_Card_g" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_License">
+            <EntityTypeMapping TypeName="Finance5917Model.View_License">
+              <MappingFragment StoreEntitySet="View_License">
+                <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+                <ScalarProperty Name="InterestName" ColumnName="InterestName" />
+                <ScalarProperty Name="LicenseStatusName" ColumnName="LicenseStatusName" />
+                <ScalarProperty Name="Licen_img" ColumnName="Licen_img" />
+                <ScalarProperty Name="Zipcode_l" ColumnName="Zipcode_l" />
+                <ScalarProperty Name="Province_l" ColumnName="Province_l" />
+                <ScalarProperty Name="Amphur_l" ColumnName="Amphur_l" />
+                <ScalarProperty Name="District_l" ColumnName="District_l" />
+                <ScalarProperty Name="LicenseName" ColumnName="LicenseName" />
+                <ScalarProperty Name="KeepAddressID" ColumnName="KeepAddressID" />
+                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+                <ScalarProperty Name="LicenseID" ColumnName="LicenseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Pay">
+            <EntityTypeMapping TypeName="Finance5917Model.View_Pay">
+              <MappingFragment StoreEntitySet="View_Pay">
+                <ScalarProperty Name="Payment_Money" ColumnName="Payment_Money" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+                <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+                <ScalarProperty Name="ID_Card_m" ColumnName="ID_Card_m" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

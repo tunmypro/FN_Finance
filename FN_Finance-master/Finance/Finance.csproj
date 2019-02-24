@@ -182,6 +182,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -226,6 +227,7 @@
       <DependentUpon>Contract.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AutoCompleteController.cs" />
+    <Compile Include="Controllers\Contracts22Controller.cs" />
     <Compile Include="Controllers\ContractsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\GuaranteeCustomersController.cs" />
@@ -238,6 +240,11 @@
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SearchingController.cs" />
     <Compile Include="Controllers\User_FinanceController.cs" />
+    <Compile Include="Finance5917DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Finance5917DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -292,17 +299,48 @@
     <Compile Include="Models\User_Finance.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\View_Contract.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_Customers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_Guarantee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_License.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_Pay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report\CrystalReport.cs">
+    <Compile Include="Report\ContractDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
+      <DependentUpon>ContractDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ContractForm.aspx.cs">
+      <DependentUpon>ContractForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ContractForm.aspx.designer.cs">
+      <DependentUpon>ContractForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CusDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CusDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Report\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\GuaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Report\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -317,6 +355,13 @@
     </Compile>
     <Compile Include="Report\WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Validate\ConvertDate.cs" />
@@ -728,16 +773,6 @@
     <Content Include="assets\libs\jquery-minicolors\jquery.minicolors.min.js" />
     <Content Include="assets\libs\jquery-minicolors\jquery.minicolors.png" />
     <Content Include="assets\libs\jquery-minicolors\without-bootstrap.html" />
-    <Content Include="assets\libs\jquery-steps\build\jquery.steps.min.js" />
-    <Content Include="assets\libs\jquery-steps\jquery.steps.css" />
-    <Content Include="assets\libs\jquery-steps\lib\jquery-1.10.2.min.js" />
-    <Content Include="assets\libs\jquery-steps\lib\jquery-1.11.1.min.js" />
-    <Content Include="assets\libs\jquery-steps\lib\jquery-1.9.1.min.js" />
-    <Content Include="assets\libs\jquery-steps\lib\jquery.cookie-1.3.1.js" />
-    <Content Include="assets\libs\jquery-steps\lib\modernizr-2.6.2.min.js" />
-    <Content Include="assets\libs\jquery-steps\LICENSE.txt" />
-    <Content Include="assets\libs\jquery-steps\nuget\NuGet.exe" />
-    <Content Include="assets\libs\jquery-steps\steps.css" />
     <Content Include="assets\libs\jquery-validation\dist\additional-methods.js" />
     <Content Include="assets\libs\jquery-validation\dist\jquery.validate.min.js" />
     <Content Include="assets\libs\jquery-validation\dist\localization\messages_ar.js" />
@@ -1239,6 +1274,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="jquery-ui-1.12.1.custom\AUTHORS.txt" />
+    <Content Include="jquery-ui-1.12.1.custom\external\jquery\jquery.js" />
+    <Content Include="jquery-ui-1.12.1.custom\images\ui-icons_444444_256x240.png" />
+    <Content Include="jquery-ui-1.12.1.custom\images\ui-icons_555555_256x240.png" />
+    <Content Include="jquery-ui-1.12.1.custom\images\ui-icons_777620_256x240.png" />
+    <Content Include="jquery-ui-1.12.1.custom\images\ui-icons_777777_256x240.png" />
+    <Content Include="jquery-ui-1.12.1.custom\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="jquery-ui-1.12.1.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="jquery-ui-1.12.1.custom\index.html" />
+    <Content Include="jquery-ui-1.12.1.custom\jquery-ui.css" />
+    <Content Include="jquery-ui-1.12.1.custom\jquery-ui.js" />
+    <Content Include="jquery-ui-1.12.1.custom\jquery-ui.min.css" />
+    <Content Include="jquery-ui-1.12.1.custom\jquery-ui.min.js" />
+    <Content Include="jquery-ui-1.12.1.custom\jquery-ui.structure.css" />
+    <Content Include="jquery-ui-1.12.1.custom\jquery-ui.structure.min.css" />
+    <Content Include="jquery-ui-1.12.1.custom\jquery-ui.theme.css" />
+    <Content Include="jquery-ui-1.12.1.custom\jquery-ui.theme.min.css" />
+    <Content Include="jquery-ui-1.12.1.custom\LICENSE.txt" />
     <Content Include="jquery.Thailand.js\database\tools\convert.js" />
     <Content Include="jquery.Thailand.js\database\tools\index.html" />
     <Content Include="jquery.Thailand.js\database\tools\words.txt" />
@@ -1340,10 +1393,6 @@
     <Content Include="assets\libs\jquery-asGradient\package.json" />
     <Content Include="assets\libs\jquery-asGradient\README.md" />
     <Content Include="assets\libs\jquery-minicolors\component.json" />
-    <Content Include="assets\libs\jquery-steps\build\jquery.steps-1.1.0.zip" />
-    <Content Include="assets\libs\jquery-steps\build\jQuery.Steps.1.1.0.nupkg" />
-    <Content Include="assets\libs\jquery-steps\nuget\jQuery.Steps.nuspec" />
-    <Content Include="assets\libs\jquery-steps\steps.jquery.json" />
     <Content Include="dist\css\icons\font-awesome\less\fa-brands.less" />
     <Content Include="dist\css\icons\font-awesome\less\fa-regular.less" />
     <Content Include="dist\css\icons\font-awesome\less\fa-solid.less" />
@@ -1468,6 +1517,7 @@
     <Content Include="dist\css\icons\weather-icons\sass\weather-icons-wind.scss" />
     <Content Include="dist\css\icons\weather-icons\sass\weather-icons.min.scss" />
     <Content Include="dist\css\icons\weather-icons\sass\weather-icons.scss" />
+    <Content Include="Report\ContractForm.aspx" />
     <Content Include="Report\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
@@ -1482,6 +1532,41 @@
     <Content Include="Contract.xss">
       <DependentUpon>Contract.xsd</DependentUpon>
     </Content>
+    <Content Include="jquery-ui-1.12.1.custom\package.json" />
+    <Content Include="Finance5917DataSet.xsc">
+      <DependentUpon>Finance5917DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Finance5917DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Finance5917DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Finance5917DataSet.xss">
+      <DependentUpon>Finance5917DataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Report\CusDataSet.xsc">
+      <DependentUpon>CusDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Report\ContractDataset.xsc">
+      <DependentUpon>ContractDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Report\ContractDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContractDataset.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\ContractDataset.xss">
+      <DependentUpon>ContractDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Report\CusDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CusDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\CusDataSet.xss">
+      <DependentUpon>CusDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Report\DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1490,9 +1575,21 @@
     <Content Include="Report\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
+    <Content Include="Report\GuaDataSet.xsc">
+      <DependentUpon>GuaDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Report\GuaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GuaDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\GuaDataSet.xss">
+      <DependentUpon>GuaDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Report\WebForm1.aspx" />
     <Content Include="Report\WebForm2.aspx" />
+    <Content Include="Report\WebForm3.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1595,12 +1692,10 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Report\CrystalReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\eptMoney.rdlc" />
+    <EmbeddedResource Include="Report\Contract.rdlc" />
+    <EmbeddedResource Include="Report\Customer.rdlc" />
     <EmbeddedResource Include="Report\Group.rdlc" />
+    <EmbeddedResource Include="Report\Guarantee.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

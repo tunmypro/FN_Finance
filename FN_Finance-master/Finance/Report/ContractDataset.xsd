@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ContractDataset" targetNamespace="http://tempuri.org/ContractDataset.xsd" xmlns:mstns="http://tempuri.org/ContractDataset.xsd" xmlns="http://tempuri.org/ContractDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Finance5917ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Finance5917ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Finance5917ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_ContractTableAdapter" GeneratorDataComponentClassName="View_ContractTableAdapter" Name="View_Contract" UserDataComponentName="View_ContractTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Finance5917ConnectionString (Web.config)" DbObjectName="Finance5917.dbo.View_Contract" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ContractID, Name_m, Lname_m, titlename, Balance, Per_Month_Amount, Date_Start, Date_End FROM dbo.View_Contract</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ContractID" DataSetColumn="ContractID" />
+              <Mapping SourceColumn="Name_m" DataSetColumn="Name_m" />
+              <Mapping SourceColumn="Lname_m" DataSetColumn="Lname_m" />
+              <Mapping SourceColumn="titlename" DataSetColumn="titlename" />
+              <Mapping SourceColumn="Balance" DataSetColumn="Balance" />
+              <Mapping SourceColumn="Per_Month_Amount" DataSetColumn="Per_Month_Amount" />
+              <Mapping SourceColumn="Date_Start" DataSetColumn="Date_Start" />
+              <Mapping SourceColumn="Date_End" DataSetColumn="Date_End" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ContractDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ContractDataset" msprop:Generator_UserDSName="ContractDataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_Contract" msprop:Generator_TableClassName="View_ContractDataTable" msprop:Generator_TableVarName="tableView_Contract" msprop:Generator_TablePropName="View_Contract" msprop:Generator_RowDeletingName="View_ContractRowDeleting" msprop:Generator_RowChangingName="View_ContractRowChanging" msprop:Generator_RowEvHandlerName="View_ContractRowChangeEventHandler" msprop:Generator_RowDeletedName="View_ContractRowDeleted" msprop:Generator_UserTableName="View_Contract" msprop:Generator_RowChangedName="View_ContractRowChanged" msprop:Generator_RowEvArgName="View_ContractRowChangeEvent" msprop:Generator_RowClassName="View_ContractRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ContractID" msprop:Generator_ColumnVarNameInTable="columnContractID" msprop:Generator_ColumnPropNameInRow="ContractID" msprop:Generator_ColumnPropNameInTable="ContractIDColumn" msprop:Generator_UserColumnName="ContractID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="22" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name_m" msprop:Generator_ColumnVarNameInTable="columnName_m" msprop:Generator_ColumnPropNameInRow="Name_m" msprop:Generator_ColumnPropNameInTable="Name_mColumn" msprop:Generator_UserColumnName="Name_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lname_m" msprop:Generator_ColumnVarNameInTable="columnLname_m" msprop:Generator_ColumnPropNameInRow="Lname_m" msprop:Generator_ColumnPropNameInTable="Lname_mColumn" msprop:Generator_UserColumnName="Lname_m">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="titlename" msprop:Generator_ColumnVarNameInTable="columntitlename" msprop:Generator_ColumnPropNameInRow="titlename" msprop:Generator_ColumnPropNameInTable="titlenameColumn" msprop:Generator_UserColumnName="titlename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Balance" msprop:Generator_ColumnVarNameInTable="columnBalance" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_UserColumnName="Balance" type="xs:decimal" />
+              <xs:element name="Per_Month_Amount" msprop:Generator_ColumnVarNameInTable="columnPer_Month_Amount" msprop:Generator_ColumnPropNameInRow="Per_Month_Amount" msprop:Generator_ColumnPropNameInTable="Per_Month_AmountColumn" msprop:Generator_UserColumnName="Per_Month_Amount" type="xs:decimal" />
+              <xs:element name="Date_Start" msprop:Generator_ColumnVarNameInTable="columnDate_Start" msprop:Generator_ColumnPropNameInRow="Date_Start" msprop:Generator_ColumnPropNameInTable="Date_StartColumn" msprop:Generator_UserColumnName="Date_Start" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Date_End" msprop:Generator_ColumnVarNameInTable="columnDate_End" msprop:Generator_ColumnPropNameInRow="Date_End" msprop:Generator_ColumnPropNameInTable="Date_EndColumn" msprop:Generator_UserColumnName="Date_End" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_Contract" />
+      <xs:field xpath="mstns:ContractID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

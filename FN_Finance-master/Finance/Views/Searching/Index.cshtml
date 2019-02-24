@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Finance.Models.Contracts>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "จ่ายเงิน";
 }
 
 <h2>ค้นหา</h2>
@@ -75,16 +75,11 @@
 </table>
 
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 
 
 @section scripts{
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
             var table = $('#example').DataTable(

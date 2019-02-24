@@ -12,7 +12,7 @@ namespace Finance.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class User_Finance:MyClass
+    public partial class User_Finance
     {
         public int UserID { get; set; }
         public string Username { get; set; }

@@ -8,7 +8,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>GuaranteeCustomers</h4>
+    <h4>Customers</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -25,14 +25,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Lname_g)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tel)
         </dd>
 
         <dt>
@@ -92,19 +84,25 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Image_g)
+            รูปถ่าย
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image_g)
+            @if (Model.Image_g != null)
+            {
+                <img src="data:image/png;base64,@Convert.ToBase64String(Model.Image_g)" width="100">
+            }
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ID_img_g)
+            รูปบัตรประชาชน
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ID_img_g)
+            @if (Model.ID_img_g != null)
+            {
+                <img src="data:image/png;base64,@Convert.ToBase64String(Model.ID_img_g)" width="100">
+            }
         </dd>
 
         <dt>

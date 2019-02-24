@@ -7,18 +7,18 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "GuaranteeCustomers", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>GuaranteeCustomers</h4>
+        <h4>Customers</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID_Card_g)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.titleid, "titleid", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.titleid, "คำนำหน้าชื่อ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("titleid", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.titleid, "", new { @class = "text-danger" })
@@ -38,14 +38,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Lname_g, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Lname_g, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.tel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tel, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tel, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -106,7 +98,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Status_g, "Status_g", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Status_g, "สถานะลูกค้า", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("Status_g", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Status_g, "", new { @class = "text-danger" })
@@ -114,17 +106,17 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Image_g, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Image_g, "รูปถ่าย", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Image_g, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.Mypic1, new { htmlAttributes = new { @class = "form-control" }, type = "file" })
                 @Html.ValidationMessageFor(model => model.Image_g, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ID_img_g, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ID_img_g, "รูปบัตรประชาชน", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ID_img_g, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.Mypic2, new { htmlAttributes = new { @class = "form-control" }, type = "file" })
                 @Html.ValidationMessageFor(model => model.ID_img_g, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -136,7 +128,6 @@
         </div>
     </div>
 }
-
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

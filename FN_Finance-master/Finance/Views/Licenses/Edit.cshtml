@@ -7,10 +7,10 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Licenses", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>License</h4>
         <hr />
@@ -86,6 +86,14 @@
             <div class="col-md-10">
                 @Html.DropDownList("LicenseStatusID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.LicenseStatusID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Licen_img, "รูปรถ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Mypic1, new { htmlAttributes = new { @class = "form-control" }, type = "file" })
+                @Html.ValidationMessageFor(model => model.Licen_img, "", new { @class = "text-danger" })
             </div>
         </div>
 

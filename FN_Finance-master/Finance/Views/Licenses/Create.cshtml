@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.KeepAddressID, "KeepAddressID", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.KeepAddressID, "สาขาที่เก็บ", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.KeepAddressID, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.KeepAddressID, "", new { @class = "text-danger" })
@@ -106,7 +106,7 @@
 
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.LicenseType, "LicenseType", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.LicenseType, "ประเภทรถ", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.DropDownList("LicenseType", null, htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.LicenseType, "", new { @class = "text-danger" })
@@ -114,7 +114,7 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.LicenseStatusID, "LicenseStatusID", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.LicenseStatusID, "สถานะรถ", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.DropDownList("LicenseStatusID", null, htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.LicenseStatusID, "", new { @class = "text-danger" })
@@ -122,7 +122,7 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Licen_img, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.Licen_img, "รูปรถ", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.TextBoxFor(model => model.Mypic1, new { htmlAttributes = new { @class = "form-control" }, type = "file" })
                             @Html.ValidationMessageFor(model => model.Licen_img, "", new { @class = "text-danger" })

@@ -12,7 +12,7 @@ namespace Finance.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Contracts: MyClass
+    public partial class Contracts : MyClass
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Contracts()
@@ -28,6 +28,7 @@ namespace Finance.Models
         public Nullable<System.DateTime> Date_End { get; set; }
         public Nullable<System.DateTime> Date_Last { get; set; }
         public decimal? Balance { get; set; }
+        public decimal? TotalBalance { get; set; }
         public decimal? Out_Balance { get; set; }
         public decimal? Per_Month_Amount { get; set; }
     

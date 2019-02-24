@@ -1,7 +1,6 @@
 ﻿@{if (Session["Pass"] == null)
     {
         <script>
-
                 window.location.href = "@Url.Action("Index", "Login")"
         </script>
     }
@@ -49,7 +48,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <a class="dropdown" data-toggle="dropdown" href="#">
                             เรียกดูข้อมูล
                             <span class="caret"></span>
                         </a>
@@ -61,10 +60,21 @@
                             <li><a href='@Url.Action("Index", "Payments")'>การชำระเงิน</a></li>
                         </ul>
                     </li>
-                    <li>@Html.ActionLink("เงิน", "MoneyReport", "Report")</li>
-                    <li>@Html.ActionLink("รีพอร์ต ", "exportReport", "Report")</li>
-                    <li>@Html.ActionLink("ดูรีพอร์ต ", "viewReport", "Report")</li>
-                    <li>@Html.ActionLink("ดูรีพอร์ตกลุ่ม ", "viewReportGroup", "Report")</li>
+                    <li class="dropdown">
+                        <a class="dropdown" data-toggle="dropdown" href="#">
+                            รีพอร์ต
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("รีพอร์ตบุคคลกู้", "viewReport", "Report")</li>
+                            <li>@Html.ActionLink("รีพอร์ตบุคคลค้ำประกัน", "viewReport2", "Report")</li>
+                            <li>@Html.ActionLink("รีพอร์ตการเงิน", "viewReportGroup", "Report")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("เพิ่มคน", "AutoaddCus", "GuaranteeCustomers")</li>
+                    <li>@Html.ActionLink("เพิ่มคน", "AutoaddGua", "GuaranteeCustomers")</li>
+                    <li>@Html.ActionLink("เพิ่มรถ", "AutoaddLic", "GuaranteeCustomers")</li>
+                    <li>@Html.ActionLink("เพิ่มทะเบียน", "AutoaddCon", "Contracts")</li>
                     <li>@Html.ActionLink("ออกจากระบบ", "Logout", "Login")</li>
                 </ul>
             </div>
